@@ -1,24 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from "./components/header/Header";
+import {Footer} from "./components/footer/Footer";
+import {BrowserRouter} from "react-router-dom";
+import {Home} from "./components/home";
+import {samiul} from "./assets";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <BrowserRouter>
+        <div className="h-screen bg-cover bg-center"
+             style={{backgroundImage: `url(${samiul})`}}>
+            <Header/>
+            <Home/>
+        </div>
+        {/*<Footer/>*/}
+      </BrowserRouter>
   );
 }
 
