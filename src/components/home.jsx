@@ -9,9 +9,7 @@ export const Home = () => {
             <span className='text-custom-green'>.</span>
         </h1>
         <h3 className='p-10 text-4xl'>
-            SOFTWARE ENGINEER &
-            <br/>
-            FULL-STACK DEVELOPER
+            SOFTWARE ENGINEER
         </h3>
     </div>
 }
