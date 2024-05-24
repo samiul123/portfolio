@@ -66,39 +66,48 @@ const skillGroups = [
         items: [
             {
                 id: 'java',
-                logo: java
+                logo: java,
+                name: 'JAVA'
             },
             {
                 id: 'python',
-                logo: python
+                logo: python,
+                name: 'PYTHON'
             },
             {
                 id: 'javascript',
-                logo: javascript
+                logo: javascript,
+                name: 'JAVASCRIPT'
             },
             {
                 id: 'typescript',
-                logo: typescript
+                logo: typescript,
+                name: 'TYPESCRIPT'
             },
             {
                 id: 'cpp',
-                logo: cpp
+                logo: cpp,
+                name: 'CPP'
             },
             {
                 id: 'html',
-                logo: html
+                logo: html,
+                name: 'HTML'
             },
             {
                 id: 'css',
-                logo: css
+                logo: css,
+                name: 'CSS'
             },
             {
                 id: 'bash',
-                logo: bash
+                logo: bash,
+                name: 'BASH'
             },
             {
                 id: 'graphql',
-                logo: graphql
+                logo: graphql,
+                name: 'GRAPHQL'
             }
         ]
     },
@@ -107,39 +116,48 @@ const skillGroups = [
         items: [
             {
                 id: 'apache-camel',
-                logo: apacheCamel
+                logo: apacheCamel,
+                name: 'APACHE CAMEL',
             },
             {
                 id: 'spring-boot',
-                logo: spring
+                logo: spring,
+                name: 'SPRING BOOT',
             },
             {
                 id: 'nodejs',
-                logo: nodejs
+                logo: nodejs,
+                name: 'NODEJS',
             },
             {
                 id: 'react',
-                logo: react
+                logo: react,
+                name: 'REACT',
             },
             {
                 id: 'jquery',
-                logo: jquery
+                logo: jquery,
+                name: 'JQUERY',
             },
             {
                 id: 'redux',
-                logo: redux
+                logo: redux,
+                name: 'REDUX',
             },
             {
                 id: 'flutter',
-                logo: flutter
+                logo: flutter,
+                name: 'FLUTTER',
             },
             {
                 id: 'jest',
-                logo: jest
+                logo: jest,
+                name: 'JEST',
             },
             {
                 id: 'jasmine',
-                logo: jasmine
+                logo: jasmine,
+                name: 'JASMINE',
             }
         ]
     },
@@ -148,19 +166,23 @@ const skillGroups = [
         items: [
             {
                 id: 'oracle',
-                logo: oracle
+                logo: oracle,
+                name: 'ORACLE',
             },
             {
                 id: 'postgresql',
-                logo: postgresql
+                logo: postgresql,
+                name: 'POSTGRESQL',
             },
             {
                 id: 'redis',
-                logo: redis
+                logo: redis,
+                name: 'REDIS',
             },
             {
                 id: 'mariadb',
-                logo: mariadb
+                logo: mariadb,
+                name: 'MARIADB',
             }
         ]
     },
@@ -169,35 +191,43 @@ const skillGroups = [
         items: [
             {
                 id: 'nginx',
-                logo: nginx
+                logo: nginx,
+                name: 'NGINX',
             },
             {
                 id: 'jenkins',
-                logo: jenkins
+                logo: jenkins,
+                name: 'JENKINS'
             },
             {
                 id: 'makefile',
-                logo: makefile
+                logo: makefile,
+                name: 'MAKEFILE',
             },
             {
                 id: 'gradle',
-                logo: gradle
+                logo: gradle,
+                name: 'GRADLE',
             },
             {
                 id: 'git',
-                logo: git
+                logo: git,
+                name: 'GIT',
             },
             {
                 id: 'kafka',
-                logo: kafka
+                logo: kafka,
+                name: 'KAFKA',
             },
             {
                 id: 'kibana',
-                logo: kibana
+                logo: kibana,
+                name: 'KIBANA',
             },
             {
                 id: 'jira',
-                logo: jira
+                logo: jira,
+                name: 'JIRA',
             }
         ]
     }
