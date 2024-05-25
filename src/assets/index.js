@@ -1,7 +1,8 @@
-import logo from './logo/logo.png';
+import logo from './personal/logo.png';
 
 import samiul from './backgrounds/samiul-v2.png';
 import skillsBg from './backgrounds/skills-bg.jpg';
+import educationBg from './backgrounds/education-bg.jpg';
 
 import java from './tech/java-original.svg';
 import python from './tech/python.png';
@@ -33,6 +34,9 @@ import git from './tech/git.svg';
 import kafka from './tech/kafka.svg';
 import kibana from './tech/kibana.svg';
 import jira from './tech/jira.svg';
+
+import buet from './education/buet-logo.png';
+import umd from './education/umd-logo.png';
 
 export {
     logo,
@@ -67,5 +71,8 @@ export {
     git,
     kafka,
     kibana,
-    jira
+    jira,
+    buet,
+    umd,
+    educationBg
 };

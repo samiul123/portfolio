@@ -14,8 +14,9 @@ import {
     spring,
     typescript,
     jest,
-    jasmine, oracle, postgresql, redis, mariadb, nginx, jenkins, makefile, gradle, git, kafka, kibana, jira
+    jasmine, oracle, postgresql, redis, mariadb, nginx, jenkins, makefile, gradle, git, kafka, kibana, jira, buet, umd
 } from "../assets";
+import {Education} from "../components/education";
 
 const navLinks = [
     {
@@ -36,7 +37,7 @@ const navLinks = [
     {
         id: 'education',
         title: 'EDUCATION',
-        route: null
+        route: Education
     },
     {
         id: 'experiences',
@@ -233,4 +234,21 @@ const skillGroups = [
     }
 ]
 
-export {navLinks, skillGroups}
+const educations = [
+    {
+        institution: 'University of Minnesota - Duluth',
+        major: 'Computer Science',
+        degree: 'Master of Science',
+        date: 'Aug 2023 - Present',
+        logo: umd
+    },
+    {
+        institution: 'Bangladesh University of Engineering and Technology',
+        major: 'Computer Science and Engineering',
+        degree: 'Bachelor of Science',
+        date: 'Feb 2015 - Apr 2019',
+        logo: buet
+    }
+]
+
+export {navLinks, skillGroups, educations}
