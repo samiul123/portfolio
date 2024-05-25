@@ -1,7 +1,7 @@
 import './App.css';
-import Header from "./components/header/Header";
-import {Footer} from "./components/footer/Footer";
-import Home from "./components/home/home";
+import Header from "./components/header";
+import {Footer} from "./components/footer";
+import Home from "./components/home";
 import {samiul} from "./assets";
 import {navLinks} from "./constants";
 import React from "react";

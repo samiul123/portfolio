@@ -1,5 +1,5 @@
-import {logo} from '../../assets'
-import {navLinks} from "../../constants";
+import {logo} from '../assets'
+import {navLinks} from "../constants";
 import {Link} from "react-scroll";
 import {useState} from "react";
 

@@ -1,4 +1,4 @@
-import Home from "../components/home/home";
+import Home from "../components/home";
 import Skills from "../components/skills";
 import {
     apacheCamel,
