@@ -1,6 +1,5 @@
 import {logo} from '../assets'
 import {navLinks} from "../constants";
-import {Link} from "react-scroll";
 import {useState} from "react";
 
 function Header() {
@@ -20,16 +19,13 @@ function Header() {
             <nav>
                 <ul className="flex space-x-4">
                     {navLinks.map(nav =>
-                        <Link
+                        <li
                             key={nav.id}
-                            to={nav.id}
-                            smooth={true}
-                            duration={500}
-                            className={`cursor-pointer ${activeMenu === nav.id ? 'text-custom-green':'text-white'} hover:text-custom-green`}
+                            className={`cursor-pointer ${activeMenu === nav.id ? 'text-custom-green' : 'text-white'} hover:text-custom-green`}
                             onClick={() => setActiveMenu(nav.id)}
                         >
-                            {nav.title}
-                        </Link>
+                            <a href={`#${nav.id}`}>{nav.title}</a>
+                        </li>
                     )}
                 </ul>
             </nav>
