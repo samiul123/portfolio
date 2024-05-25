@@ -1,7 +1,7 @@
 import {skillsBg} from "../assets";
 import {skillGroups} from "../constants";
-import {motion, AnimatePresence} from "framer-motion";
-import {useState} from "react";
+import {motion, AnimatePresence, useInView} from "framer-motion";
+import {useRef, useState} from "react";
 
 const Skills = (props) => {
     const [hoveredGroup, setHoveredGroup] = useState(null);
@@ -35,6 +35,8 @@ const Skills = (props) => {
     };
 
     const visibleItems = getVisibleItems();
+    const ref = useRef(null);
+    const isInView = useInView(ref);
 
     return (
         <div id={props.id}
@@ -44,13 +46,17 @@ const Skills = (props) => {
             <div className="absolute inset-0 bg-custom-gray opacity-80 z-0"></div>
             <h2 className="font-lulo text-4xl z-10">SKILLS</h2>
             <div className="flex justify-center space-x-10">
-                {skillGroups.map((group, i) => {
+                {skillGroups.map((group, index) => {
                     return (
-                        <div key={i}
-                             className="p-5 group relative overflow-hidden transition duration-300 ease-in-out transform
-                             hover:translate-y-3 hover:font-bold"
-                             onMouseEnter={() => handleGroupMouseEnter(group)}
-                             onMouseLeave={handleGroupMouseLeave}>
+                        <motion.div
+                            key={index}
+                            ref={ref}
+                            className="p-5 group relative overflow-hidden transition duration-300 ease-in-out transform hover:translate-y-3 hover:font-bold"
+                            onMouseEnter={() => handleGroupMouseEnter(group)}
+                            onMouseLeave={handleGroupMouseLeave}
+                            initial={{opacity: 0}}
+                            animate={{opacity: isInView ? 1 : 0}}
+                            transition={{duration: 0.5, delay: index * 0.2}}>
                             <h4 className="mb-3 text-center">{group.title}</h4>
                             <motion.div
                                 className="h-0.5 bg-white mb-5 mx-auto"
@@ -72,14 +78,14 @@ const Skills = (props) => {
                                     />
                                 ))}
                             </div>
-                        </div>
+                        </motion.div>
                     )
                 })}
             </div>
             <div className="relative w-full flex justify-center mt-10">
                 <div
                     className="flex space-x-4 text-gray-400 font-semibold overflow-hidden w-full justify-center items-center">
-                {
+                    {
                         hoveredItem &&
                         <AnimatePresence initial={false}>
                             {visibleItems.map(item => (
