@@ -10,7 +10,7 @@ export const Education = (props) => {
         <div
             id={props.id}
             key={props.id}
-            className="relative p-10 h-auto bg-cover text-white flex flex-col items-center space-y-10"
+            className="uppercase relative p-10 h-auto bg-cover text-white flex flex-col items-center space-y-10"
             style={{ backgroundImage: `url(${educationBg})` }}
         >
             <div className="absolute inset-0 bg-custom-gray opacity-80 z-0"></div>
