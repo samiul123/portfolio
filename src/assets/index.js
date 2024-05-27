@@ -3,6 +3,7 @@ import logo from './personal/logo.png';
 import samiul from './backgrounds/samiul-v2.png';
 import skillsBg from './backgrounds/skills-bg.jpg';
 import educationBg from './backgrounds/education-bg.jpg';
+import experienceBg from './backgrounds/experience-bg.jpg';
 
 import java from './tech/java-original.svg';
 import python from './tech/python.png';
@@ -37,6 +38,13 @@ import jira from './tech/jira.svg';
 
 import buet from './education/buet-logo.png';
 import umd from './education/umd-logo.png';
+
+import stiboDX from './experience/stiboDx.png';
+import konasl from './experience/konasl.png';
+import resume from './experience/resume.png';
+import download from './experience/download.svg';
+
+import resumePdf from './resume/resume.pdf';
 
 export {
     logo,
@@ -74,5 +82,11 @@ export {
     jira,
     buet,
     umd,
-    educationBg
+    educationBg,
+    stiboDX,
+    konasl,
+    experienceBg,
+    resume,
+    download,
+    resumePdf
 };

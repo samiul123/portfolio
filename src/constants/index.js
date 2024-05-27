@@ -4,19 +4,39 @@ import {
     apacheCamel,
     bash,
     cpp,
-    css, flutter,
+    css,
+    flutter,
     graphql,
     html,
     java,
-    javascript, jquery,
+    javascript,
+    jquery,
     nodejs,
-    python, react, redux,
+    python,
+    react,
+    redux,
     spring,
     typescript,
     jest,
-    jasmine, oracle, postgresql, redis, mariadb, nginx, jenkins, makefile, gradle, git, kafka, kibana, jira, buet, umd
+    jasmine,
+    oracle,
+    postgresql,
+    redis,
+    mariadb,
+    nginx,
+    jenkins,
+    makefile,
+    gradle,
+    git,
+    kafka,
+    kibana,
+    jira,
+    buet,
+    umd,
+    stiboDX, konasl
 } from "../assets";
 import {Education} from "../components/education";
+import {Experience} from "../components/experience";
 
 const navLinks = [
     {
@@ -42,7 +62,7 @@ const navLinks = [
     {
         id: 'experiences',
         title: 'EXPERIENCES',
-        route: null
+        route: Experience
     },
     {
         id: 'publications',
@@ -251,4 +271,19 @@ const educations = [
     }
 ]
 
-export {navLinks, skillGroups, educations}
+const experiences = [
+    {
+        title: 'Software Engineer',
+        company: 'Stibo DX',
+        date: 'Aug 2022 - Aug 2023',
+        logo: stiboDX
+    },
+    {
+        title: 'Software Engineer',
+        company: 'Kona Software Lab Ltd.',
+        date: 'May 2019 - July 2022',
+        logo: konasl
+    }
+]
+
+export {navLinks, skillGroups, educations, experiences}
