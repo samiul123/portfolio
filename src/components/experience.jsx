@@ -1,4 +1,4 @@
-import {download, experienceBg, resume, resumePdf} from "../assets";
+import {download, experienceBg, resume} from "../assets";
 import {VerticalTimeline, VerticalTimelineElement} from "react-vertical-timeline-component";
 import {experiences} from "../constants";
 import React from "react";

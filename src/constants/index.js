@@ -37,6 +37,7 @@ import {
 } from "../assets";
 import {Education} from "../components/education";
 import {Experience} from "../components/experience";
+import {Publication} from "../components/publication";
 
 const navLinks = [
     {
@@ -67,7 +68,7 @@ const navLinks = [
     {
         id: 'publications',
         title: 'PUBLICATIONS',
-        route: null
+        route: Publication
     },
     {
         id: 'certifications',
@@ -286,4 +287,21 @@ const experiences = [
     }
 ]
 
-export {navLinks, skillGroups, educations, experiences}
+const publications = [
+    {
+        title: 'Exploring Challenges and Innovations in E-Commerce Recommendation Systems: A Comprehensive Review',
+        conference: 'Congress on Intelligent Systems',
+        date: 'Mar 31, 2024',
+        url: 'https://link.springer.com/chapter/10.1007/978-981-99-9040-5_8',
+        abstract: 'Recommendation systems play a pivotal role in the digital age, with ongoing ' +
+            'research focused on enhancing their effectiveness. This paper delves into the common ' +
+            'challenges associated with developing these systems, including the cold-start problem, ' +
+            'handling sparse datasets, and the use of matrix filling in hierarchical methods. We ' +
+            'explore innovative approaches that include the integration of diverse algorithms and ' +
+            'the application of alternative techniques, such as deep learning. Our research aims to ' +
+            'establish an empirically based standard for various aspects of recommendation systems, ' +
+            'thereby serving as a valuable reference for future studies.'
+    }
+]
+
+export {navLinks, skillGroups, educations, experiences, publications}

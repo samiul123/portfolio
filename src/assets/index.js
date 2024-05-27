@@ -4,6 +4,7 @@ import samiul from './backgrounds/samiul-v2.png';
 import skillsBg from './backgrounds/skills-bg.jpg';
 import educationBg from './backgrounds/education-bg.jpg';
 import experienceBg from './backgrounds/experience-bg.jpg';
+import publicationBg from './backgrounds/publication-bg.jpg';
 
 import java from './tech/java-original.svg';
 import python from './tech/python.png';
@@ -45,6 +46,9 @@ import resume from './experience/resume.png';
 import download from './experience/download.svg';
 
 import resumePdf from './resume/resume.pdf';
+
+import rightArrow from './icons/nav-arrow-right.svg';
+import leftArrow from './icons/nav-arrow-left.svg';
 
 export {
     logo,
@@ -88,5 +92,8 @@ export {
     experienceBg,
     resume,
     download,
-    resumePdf
+    resumePdf,
+    publicationBg,
+    rightArrow,
+    leftArrow
 };
