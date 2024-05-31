@@ -33,11 +33,12 @@ import {
     jira,
     buet,
     umd,
-    stiboDX, konasl
+    stiboDX, konasl, algoxpert, udemy, systemxpert, hadoop, datascienceBootcamp
 } from "../assets";
 import {Education} from "../components/education";
 import {Experience} from "../components/experience";
 import {Publication} from "../components/publication";
+import {Certification} from "../components/Certification";
 
 const navLinks = [
     {
@@ -73,7 +74,7 @@ const navLinks = [
     {
         id: 'certifications',
         title: 'CERTIFICATIONS',
-        route: null
+        route: Certification
     },
     {
         id: 'contact',
@@ -304,4 +305,31 @@ const publications = [
     }
 ]
 
-export {navLinks, skillGroups, educations, experiences, publications}
+const certifications = [
+    {
+        title: 'Systems Expert Certificate',
+        issuer: 'AlgoExpert',
+        issuerLogo: algoxpert,
+        issueDate: 'Apr 2021',
+        image: systemxpert,
+        credentialUrl: 'https://certificate.algoexpert.io/SE-f21fe4bd68',
+    },
+    {
+        title: 'The Ultimate Hands-On Hadoop: Tame Your Big Data',
+        issuer: 'Udemy',
+        issuerLogo: udemy,
+        issueDate: 'Apr 2021',
+        image: hadoop,
+        credentialUrl: 'https://www.udemy.com/certificate/UC-31e402de-0bd2-44ee-a4fa-dce048140d68/'
+    },
+    {
+        title: 'The Data Science Course: Complete Data Science Bootcamp 2024',
+        issuer: 'Udemy',
+        issuerLogo: udemy,
+        issueDate: 'Mar 2021',
+        image: datascienceBootcamp,
+        credentialUrl: 'https://www.udemy.com/certificate/UC-fc9d123a-b46f-402d-ba63-2385262a395e/',
+    }
+]
+
+export {navLinks, skillGroups, educations, experiences, publications, certifications}

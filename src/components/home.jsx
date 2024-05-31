@@ -10,8 +10,9 @@ const Home = (props) => {
                 MUSHFIK
                 <span className='text-custom-green'>.</span>
             </h1>
-            <h3 className='p-10 text-4xl'>
-                SOFTWARE ENGINEER
+            <h3 className='p-10 text-3xl'>
+                SOFTWARE ENGINEER & <br/>
+                DATA SCIENCE ENTHUSIAST
             </h3>
         </div>
     )
