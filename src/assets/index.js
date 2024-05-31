@@ -5,6 +5,7 @@ import skillsBg from './backgrounds/skills-bg.jpg';
 import educationBg from './backgrounds/education-bg.jpg';
 import experienceBg from './backgrounds/experience-bg.jpg';
 import publicationBg from './backgrounds/publication-bg.jpg';
+import certificationBg from './backgrounds/certification-bg.jpg';
 
 import java from './tech/java-original.svg';
 import python from './tech/python.png';
@@ -49,6 +50,12 @@ import resumePdf from './resume/resume.pdf';
 
 import rightArrow from './icons/nav-arrow-right.svg';
 import leftArrow from './icons/nav-arrow-left.svg';
+
+import udemy from './certification/udemy.svg';
+import algoxpert from './certification/algoxpert.png';
+import systemxpert from './certification/systems-expert.png';
+import hadoop from './certification/hadoop.png';
+import datascienceBootcamp from './certification/datascience-bootcamp.png'
 
 export {
     logo,
@@ -95,5 +102,11 @@ export {
     resumePdf,
     publicationBg,
     rightArrow,
-    leftArrow
+    leftArrow,
+    certificationBg,
+    udemy,
+    algoxpert,
+    systemxpert,
+    hadoop,
+    datascienceBootcamp
 };
