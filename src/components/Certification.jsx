@@ -1,4 +1,4 @@
-import {certificationBg, educationBg} from "../assets";
+import {certificationBg} from "../assets";
 import React from "react";
 import {certifications} from "../constants";
 import {motion} from "framer-motion";
@@ -23,8 +23,8 @@ export const Certification = (props) => {
                 certifications.map((certification, index) => (
                     <motion.div
                         className="flex-1 p-5 rounded-lg items-center z-10"
+                        whileHover={{scale: 1.1}}
                         variants={fadeIn('right', 'spring', index * 0.5, 0.75)}>
-                        {/*<div className="flex-1 p-5 rounded-lg items-center z-10">*/}
                             <a className="hover:cursor-pointer"
                                onClick={() => window.open(certification.credentialUrl)}>
                                 <img
@@ -32,7 +32,6 @@ export const Certification = (props) => {
                                     alt={certification.issuer}
                                     className="w-full h-full rounded-lg"/>
                             </a>
-                        {/*</div>*/}
                     </motion.div>
                 ))
             }
