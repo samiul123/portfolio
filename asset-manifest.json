@@ -1,16 +1,21 @@
 {
   "files": {
-    "main.css": "/static/css/main.7ef004ff.css",
-    "main.js": "/static/js/main.d7041fcc.js",
+    "main.css": "/static/css/main.7a0244a4.css",
+    "main.js": "/static/js/main.a0dbc174.js",
     "static/js/453.20815797.chunk.js": "/static/js/453.20815797.chunk.js",
     "static/media/skills-bg.jpg": "/static/media/skills-bg.9def6d7aa5cf99e9ce7e.jpg",
     "static/media/publication-bg.jpg": "/static/media/publication-bg.d926389c814b351286f6.jpg",
     "static/media/experience-bg.jpg": "/static/media/experience-bg.38cebee1a60795f882e0.jpg",
     "static/media/samiul-v2.png": "/static/media/samiul-v2.5e1a6ea1ab0bfa62d461.png",
+    "static/media/certification-bg.jpg": "/static/media/certification-bg.19b81f7ea7b7b698c807.jpg",
+    "static/media/hadoop.png": "/static/media/hadoop.616482f378e888d70916.png",
+    "static/media/datascience-bootcamp.png": "/static/media/datascience-bootcamp.111d1be8eb06f2d1bfeb.png",
     "static/media/education-bg.jpg": "/static/media/education-bg.0c7180386ca9923ba35c.jpg",
     "static/media/resume.pdf": "/static/media/resume.9ee18fb9d7519b5c195b.pdf",
     "static/media/stiboDx.png": "/static/media/stiboDx.52d7767e331b4df502d9.png",
+    "static/media/systems-expert.png": "/static/media/systems-expert.47ed5907e8ddf23ee8f1.png",
     "static/media/logo.png": "/static/media/logo.c532ead975a6690077f9.png",
+    "static/media/algoxpert.png": "/static/media/algoxpert.7c7ef85bf8ea1eb0a805.png",
     "static/media/umd-logo.png": "/static/media/umd-logo.a777dc90a76ebc16bab7.png",
     "static/media/lulo-bold.ttf": "/static/media/lulo-bold.cf6ce051896b18d3449b.ttf",
     "static/media/jenkins.svg": "/static/media/jenkins.a7b521c99383d6ccaf5a92bd27940f65.svg",
@@ -47,14 +52,15 @@
     "static/media/download.svg": "/static/media/download.349bcf7692a871418e2a3477d1b6a177.svg",
     "static/media/kibana.svg": "/static/media/kibana.e2bbb19732a301ff4a448d412dee3466.svg",
     "static/media/javascript.svg": "/static/media/javascript.4e191ced82f7d9fb6e572e1600298643.svg",
+    "static/media/udemy.svg": "/static/media/udemy.a5a9f8a55eb6b3bbc89a8f70358a365c.svg",
     "static/media/nav-arrow-left.svg": "/static/media/nav-arrow-left.9ea2a2449a34f2f511d41aea75351cdd.svg",
     "static/media/nav-arrow-right.svg": "/static/media/nav-arrow-right.1aac9c773bf0b489297d62d718a3a694.svg",
-    "main.7ef004ff.css.map": "/static/css/main.7ef004ff.css.map",
-    "main.d7041fcc.js.map": "/static/js/main.d7041fcc.js.map",
+    "main.7a0244a4.css.map": "/static/css/main.7a0244a4.css.map",
+    "main.a0dbc174.js.map": "/static/js/main.a0dbc174.js.map",
     "453.20815797.chunk.js.map": "/static/js/453.20815797.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7ef004ff.css",
-    "static/js/main.d7041fcc.js"
+    "static/css/main.7a0244a4.css",
+    "static/js/main.a0dbc174.js"
   ]
 }
