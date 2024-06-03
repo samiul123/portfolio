@@ -50,6 +50,7 @@ import resumePdf from './resume/resume.pdf';
 
 import rightArrow from './icons/nav-arrow-right.svg';
 import leftArrow from './icons/nav-arrow-left.svg';
+import send from './icons/send.png';
 
 import udemy from './certification/udemy.svg';
 import algoxpert from './certification/algoxpert.png';
@@ -108,5 +109,6 @@ export {
     algoxpert,
     systemxpert,
     hadoop,
-    datascienceBootcamp
+    datascienceBootcamp,
+    send
 };

@@ -39,6 +39,7 @@ import {Education} from "../components/education";
 import {Experience} from "../components/experience";
 import {Publication} from "../components/publication";
 import {Certification} from "../components/Certification";
+import {Contact} from "../components/Contact";
 
 const navLinks = [
     {
@@ -79,7 +80,7 @@ const navLinks = [
     {
         id: 'contact',
         title: 'CONTACT',
-        route: null
+        route: Contact
     }
 ]
 
