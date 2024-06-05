@@ -9,6 +9,17 @@
   font-style: normal;
 }
 
+@layer components {
+  .autofill-text:-webkit-autofill {
+    -webkit-text-fill-color: white;
+  }
+
+  .text-input {
+    @apply autofill-text; /* set text colour (white) */
+    @apply autofill:shadow-[inset_0_0_0px_1000px_#333b50]; /* set 'background' colour (black)*/
+  }
+}
+
 * {
   scroll-behavior: smooth;
 }
