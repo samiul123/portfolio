@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.0a07da6c.css",
-    "main.js": "/static/js/main.b676180b.js",
+    "main.css": "/static/css/main.67b27fe2.css",
+    "main.js": "/static/js/main.73102801.js",
     "static/js/453.20815797.chunk.js": "/static/js/453.20815797.chunk.js",
     "static/media/skills-bg.jpg": "/static/media/skills-bg.9def6d7aa5cf99e9ce7e.jpg",
     "static/media/publication-bg.jpg": "/static/media/publication-bg.d926389c814b351286f6.jpg",
@@ -40,6 +40,7 @@
     "static/media/typescript.svg": "/static/media/typescript.f59b0ca90862bb487ea70d054135f09f.svg",
     "static/media/git.svg": "/static/media/git.70f099170f46f760e5d9f09849c589b6.svg",
     "static/media/redux.svg": "/static/media/redux.0093fdee00ecf5136c9f7660ebe5e197.svg",
+    "static/media/medium.svg": "/static/media/medium.15e3e3f02a30d904d78571a3f0c31d4f.svg",
     "static/media/oracle.svg": "/static/media/oracle.8bdaf7455c10e57320738f4075664c9b.svg",
     "static/media/gradle.svg": "/static/media/gradle.cb364b3b58e263e47165e922c389736b.svg",
     "static/media/makefile.svg": "/static/media/makefile.781e80909a093a46a834e31160c728ff.svg",
@@ -47,21 +48,23 @@
     "static/media/spring.svg": "/static/media/spring.163d115dfcbe114ada371e05cc3a8f0c.svg",
     "static/media/nginx.svg": "/static/media/nginx.92ea87cd5ef8ffb54df4309d0ae30cc8.svg",
     "static/media/css.svg": "/static/media/css.d775a84d2e94cdab548cdffe1aa9ff83.svg",
+    "static/media/gmail.svg": "/static/media/gmail.51902591c41c714b72614d2797e3978e.svg",
     "index.html": "/index.html",
     "static/media/html.svg": "/static/media/html.51305ec564cee03372ec0fdaaa77854d.svg",
     "static/media/download.svg": "/static/media/download.349bcf7692a871418e2a3477d1b6a177.svg",
     "static/media/kibana.svg": "/static/media/kibana.e2bbb19732a301ff4a448d412dee3466.svg",
+    "static/media/linkedin.svg": "/static/media/linkedin.c9dfcac6afe6a273ad25a4f5d97a3a35.svg",
     "static/media/javascript.svg": "/static/media/javascript.4e191ced82f7d9fb6e572e1600298643.svg",
     "static/media/udemy.svg": "/static/media/udemy.a5a9f8a55eb6b3bbc89a8f70358a365c.svg",
     "static/media/close.svg": "/static/media/close.8205e1fa6d840cf67cac293ee29d33e5.svg",
     "static/media/nav-arrow-left.svg": "/static/media/nav-arrow-left.9ea2a2449a34f2f511d41aea75351cdd.svg",
     "static/media/nav-arrow-right.svg": "/static/media/nav-arrow-right.1aac9c773bf0b489297d62d718a3a694.svg",
-    "main.0a07da6c.css.map": "/static/css/main.0a07da6c.css.map",
-    "main.b676180b.js.map": "/static/js/main.b676180b.js.map",
+    "main.67b27fe2.css.map": "/static/css/main.67b27fe2.css.map",
+    "main.73102801.js.map": "/static/js/main.73102801.js.map",
     "453.20815797.chunk.js.map": "/static/js/453.20815797.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0a07da6c.css",
-    "static/js/main.b676180b.js"
+    "static/css/main.67b27fe2.css",
+    "static/js/main.73102801.js"
   ]
 }
