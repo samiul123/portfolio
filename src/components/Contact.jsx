@@ -28,6 +28,7 @@ export const Contact = (props) => {
 
     function handleSubmit(e) {
         e.preventDefault();
+        handleClose();
 
         setLoading(true);
 
