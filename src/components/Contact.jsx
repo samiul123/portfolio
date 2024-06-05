@@ -4,8 +4,10 @@ import {slideIn, vibrate} from "../utils/motion";
 import {close, send} from "../assets";
 import emailjs from '@emailjs/browser';
 import {sanitizeEmail, sanitizeMessage, sanitizeName, validateForm} from "../utils/contact";
+import ReCAPTCHA from "react-google-recaptcha";
 
 export const Contact = (props) => {
+    const captchaRef = useRef(null);
     const ref = useRef(null);
     const isInView = useInView(ref, { once: false, amount: 0.25 });
     const formRef = useRef();
@@ -41,6 +43,17 @@ export const Contact = (props) => {
             setError(result);
             return;
         }
+        const token = captchaRef.current.getValue();
+        if (!token) {
+            setLoading(false);
+            setError({
+                type: 'captcha',
+                field: '',
+                message: 'Please complete the CAPTCHA to verify you are not a robot.',
+                isValid: false
+            })
+            return;
+        }
 
         emailjs.send(
             process.env.REACT_APP_EMAIL_JS_SERVICE_ID,
@@ -48,7 +61,8 @@ export const Contact = (props) => {
             {
                 from_name: sanitizedForm.name,
                 from_email: sanitizedForm.email,
-                message: sanitizedForm.message
+                message: sanitizedForm.message,
+                "g-recaptcha-response": token
             },
             {
                 publicKey: process.env.REACT_APP_EMAIL_JS_PUBLIC_KEY
@@ -62,6 +76,7 @@ export const Contact = (props) => {
                     message: ''
                 })
                 setSuccess('Thank you. I will get back to you as soon as possible.')
+                captchaRef.current.reset();
             },
             (error) => {
                 setLoading(false);
@@ -70,6 +85,7 @@ export const Contact = (props) => {
                     field: '',
                     message: 'Something went wrong. Please try again.'
                 })
+                captchaRef.current.reset();
                 console.log(error);
             }
         )
@@ -91,13 +107,13 @@ export const Contact = (props) => {
     const variants = error?.message !== '' ? vibrate : slideIn('up', 'tween', 0.2, 1);
 
     useEffect(() => {
-        if (success !== '') {
+        if (error?.message !== '' || success !== '') {
             const timer = setTimeout(() => {
                 handleClose();
-            }, 10000);
+            }, 5000);
             return () => clearTimeout(timer); // Clean up the timer on component unmount or dependency change
         }
-    }, [handleClose, success]);
+    }, [error, handleClose, success]);
 
     return (
         <div
@@ -179,7 +195,10 @@ export const Contact = (props) => {
                                 className="sm:w-[26px] sm:h-[26px] w-[23px] h-[23px] object-contain"
                             />
                         </button>
-
+                        <ReCAPTCHA sitekey='6LfIKPEpAAAAAArbixvvZm1F1ZBdku-cAd7xitxi'
+                                   ref={captchaRef}
+                                   theme='dark'
+                        />
                     </form>
                 </motion.div>
             </div>
