@@ -158,7 +158,7 @@ export const Contact = (props) => {
                                    value={form.name}
                                    placeholder="What's your name?"
                                    onChange={handleChange}
-                                   className="px-3 py-4 rounded-lg
+                                   className="text-input px-3 py-4 rounded-lg
                                border-none font-medium bg-custom-gray outline-none"
                             />
                         </label>
@@ -169,7 +169,7 @@ export const Contact = (props) => {
                                    value={form.email}
                                    placeholder="What's your email?"
                                    onChange={handleChange}
-                                   className="px-3 py-4 rounded-lg border-none font-medium bg-custom-gray outline-none"
+                                   className="text-input px-3 py-4 rounded-lg border-none font-medium bg-custom-gray outline-none"
                             />
                         </label>
                         <label className="flex flex-col gap-2">
@@ -180,10 +180,14 @@ export const Contact = (props) => {
                                 value={form.message}
                                 onChange={handleChange}
                                 placeholder="What's your message?"
-                                className="px-3 py-4 rounded-lg border-none font-medium bg-custom-gray outline-none
+                                className="text-input px-3 py-4 rounded-lg border-none font-medium bg-custom-gray outline-none
                                 resize-none"
                             />
                         </label>
+                        <ReCAPTCHA sitekey='6LfIKPEpAAAAAArbixvvZm1F1ZBdku-cAd7xitxi'
+                                   ref={captchaRef}
+                                   theme='dark'
+                        />
                         <button
                             type="submit"
                             className="p-3 flex w-fit gap-2 items-center justify-center bg-custom-gray font-bold
@@ -195,10 +199,6 @@ export const Contact = (props) => {
                                 className="sm:w-[26px] sm:h-[26px] w-[23px] h-[23px] object-contain"
                             />
                         </button>
-                        <ReCAPTCHA sitekey='6LfIKPEpAAAAAArbixvvZm1F1ZBdku-cAd7xitxi'
-                                   ref={captchaRef}
-                                   theme='dark'
-                        />
                     </form>
                 </motion.div>
             </div>
