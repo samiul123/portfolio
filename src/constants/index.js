@@ -33,7 +33,7 @@ import {
     jira,
     buet,
     umd,
-    stiboDX, konasl, algoxpert, udemy, systemxpert, hadoop, datascienceBootcamp
+    stiboDX, konasl, algoxpert, udemy, systemxpert, hadoop, datascienceBootcamp, linkedin, medium, gmail
 } from "../assets";
 import {Education} from "../components/education";
 import {Experience} from "../components/experience";
@@ -333,4 +333,22 @@ const certifications = [
     }
 ]
 
-export {navLinks, skillGroups, educations, experiences, publications, certifications}
+const contacts = [
+    {
+        id: 'linkedin',
+        icon: linkedin,
+        url: 'https://www.linkedin.com/in/samiulmushfik/',
+    },
+    {
+        id: 'medium',
+        icon: medium,
+        url: 'https://medium.com/@samiulmushfik'
+    },
+    {
+        id: 'gmail',
+        icon: gmail,
+        url: 'mailto:mushf001@d.umn.edu'
+    }
+]
+
+export {navLinks, skillGroups, educations, experiences, publications, certifications, contacts}
