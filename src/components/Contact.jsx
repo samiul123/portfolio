@@ -5,6 +5,7 @@ import {close, send} from "../assets";
 import emailjs from '@emailjs/browser';
 import {sanitizeEmail, sanitizeMessage, sanitizeName, validateForm} from "../utils/contact";
 import ReCAPTCHA from "react-google-recaptcha";
+import {contacts} from "../constants";
 
 export const Contact = (props) => {
     const captchaRef = useRef(null);
@@ -122,85 +123,98 @@ export const Contact = (props) => {
             key={props.id}
             className="p-10 h-auto bg-custom-gray text-white flex flex-col items-center space-y-10">
             <h2 className="font-lulo uppercase text-4xl z-10">Contact</h2>
-            <div ref={ref} className="overflow-hidden min-w-[800px]">
+            <div ref={ref} className="overflow-hidden flex sm:flex-col justify-center">
                 <motion.div
                     initial="hidden"
                     animate={isInView ? "show" : "hidden"}
                     viewport={{ once: false, amount: .25 }}
                     variants={slideIn('left', 'tween', 0.2, 1)}
-                    className="bg-gray-600 flex-[0.75] p-8 rounded-lg">
-                    <div className="overflow-hidden">
-                        {
-                            (error?.message || success) &&
-                            <motion.div
-                                initial="hidden"
-                                animate={(error?.message !== '' || success !== '') && isInView ? 'show' : 'hidden'}
-                                variants={variants}
-                                className={`${error?.message !== '' ? 'bg-red-500' : 'bg-custom-green-v2'} p-2 gap-2 flex 
+                    className="flex flex-row gap-5 items-center justify-center">
+                    <div className="bg-gray-600 flex-[.75] p-8 rounded-lg lg:min-w-[900px] md:min-w-[700px] min-w-[700px]">
+                        <div className="overflow-hidden">
+                            {
+                                (error?.message || success) &&
+                                <motion.div
+                                    initial="hidden"
+                                    animate={(error?.message !== '' || success !== '') && isInView ? 'show' : 'hidden'}
+                                    variants={variants}
+                                    className={`${error?.message !== '' ? 'bg-red-500' : 'bg-custom-green-v2'} p-2 gap-2 flex 
                             rounded-lg w-fit mx-auto items-center justify-center`}>
-                                {error?.message || success}
-                                <button type="submit"
-                                        onClick={handleClose}
-                                        className="w-[15px] h-[15px]">
-                                    <img src={close} alt="close" className="object-contain"/>
-                                </button>
-                            </motion.div>
+                                    {error?.message || success}
+                                    <button type="submit"
+                                            onClick={handleClose}
+                                            className="w-[15px] h-[15px]">
+                                        <img src={close} alt="close" className="object-contain"/>
+                                    </button>
+                                </motion.div>
+                            }
+                        </div>
+
+                        <form
+                            onSubmit={handleSubmit}
+                            ref={formRef}
+                            className="flex flex-col p-5 gap-6">
+                            <label className="flex flex-col gap-2">
+                                <span className="font-medium">Your Name</span>
+                                <input type="text"
+                                       name="name"
+                                       value={form.name}
+                                       placeholder="What's your name?"
+                                       onChange={handleChange}
+                                       className="text-input px-3 py-4 rounded-lg
+                               border-none font-medium bg-custom-gray outline-none"
+                                />
+                            </label>
+                            <label className="flex flex-col gap-2">
+                                <span className="font-medium">Your Email</span>
+                                <input type="text"
+                                       name="email"
+                                       value={form.email}
+                                       placeholder="What's your email?"
+                                       onChange={handleChange}
+                                       className="text-input px-3 py-4 rounded-lg border-none font-medium bg-custom-gray outline-none"
+                                />
+                            </label>
+                            <label className="flex flex-col gap-2">
+                                <span className="font-medium">Your Message</span>
+                                <textarea
+                                    rows="8"
+                                    name="message"
+                                    value={form.message}
+                                    onChange={handleChange}
+                                    placeholder="What's your message?"
+                                    className="text-input px-3 py-4 rounded-lg border-none font-medium bg-custom-gray outline-none
+                                resize-none"
+                                />
+                            </label>
+                            <ReCAPTCHA sitekey='6LfIKPEpAAAAAArbixvvZm1F1ZBdku-cAd7xitxi'
+                                       ref={captchaRef}
+                                       theme='dark'
+                            />
+                            <button
+                                type="submit"
+                                className="p-3 flex w-fit gap-2 items-center justify-center bg-custom-gray font-bold
+                            rounded-lg hover:bg-black">
+                                {loading ? 'SENDING' : 'SEND'}
+                                <img
+                                    src={send}
+                                    alt="send"
+                                    className="sm:w-[26px] sm:h-[26px] w-[23px] h-[23px] object-contain"
+                                />
+                            </button>
+                        </form>
+                    </div>
+                    <div className="flex-[.25] flex-col sm:flex-row items-center">
+                        {
+                            contacts.map((contact) => (
+                                <a href={contact.url}>
+                                    <img className="w-10 h-10" src={contact.icon} alt={contact.id}/>
+                                </a>
+
+                            ))
                         }
                     </div>
 
-                    <form
-                        onSubmit={handleSubmit}
-                        ref={formRef}
-                        className="flex flex-col p-5 gap-6">
-                        <label className="flex flex-col gap-2">
-                            <span className="font-medium">Your Name</span>
-                            <input type="text"
-                                   name="name"
-                                   value={form.name}
-                                   placeholder="What's your name?"
-                                   onChange={handleChange}
-                                   className="text-input px-3 py-4 rounded-lg
-                               border-none font-medium bg-custom-gray outline-none"
-                            />
-                        </label>
-                        <label className="flex flex-col gap-2">
-                            <span className="font-medium">Your Email</span>
-                            <input type="text"
-                                   name="email"
-                                   value={form.email}
-                                   placeholder="What's your email?"
-                                   onChange={handleChange}
-                                   className="text-input px-3 py-4 rounded-lg border-none font-medium bg-custom-gray outline-none"
-                            />
-                        </label>
-                        <label className="flex flex-col gap-2">
-                            <span className="font-medium">Your Message</span>
-                            <textarea
-                                rows="8"
-                                name="message"
-                                value={form.message}
-                                onChange={handleChange}
-                                placeholder="What's your message?"
-                                className="text-input px-3 py-4 rounded-lg border-none font-medium bg-custom-gray outline-none
-                                resize-none"
-                            />
-                        </label>
-                        <ReCAPTCHA sitekey='6LfIKPEpAAAAAArbixvvZm1F1ZBdku-cAd7xitxi'
-                                   ref={captchaRef}
-                                   theme='dark'
-                        />
-                        <button
-                            type="submit"
-                            className="p-3 flex w-fit gap-2 items-center justify-center bg-custom-gray font-bold
-                            rounded-lg hover:bg-black">
-                            {loading ? 'SENDING' : 'SEND'}
-                            <img
-                                src={send}
-                                alt="send"
-                                className="sm:w-[26px] sm:h-[26px] w-[23px] h-[23px] object-contain"
-                            />
-                        </button>
-                    </form>
                 </motion.div>
             </div>
         </div>

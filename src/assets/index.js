@@ -59,6 +59,10 @@ import systemxpert from './certification/systems-expert.png';
 import hadoop from './certification/hadoop.png';
 import datascienceBootcamp from './certification/datascience-bootcamp.png'
 
+import linkedin from './contact/linkedin.svg';
+import medium from './contact/medium.svg';
+import gmail from './contact/gmail.svg';
+
 export {
     logo,
     samiul,
@@ -112,5 +116,8 @@ export {
     hadoop,
     datascienceBootcamp,
     send,
-    close
+    close,
+    linkedin,
+    medium,
+    gmail
 };
