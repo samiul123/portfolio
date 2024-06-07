@@ -2,6 +2,7 @@ import {download, experienceBg, resume} from "../assets";
 import {VerticalTimeline, VerticalTimelineElement} from "react-vertical-timeline-component";
 import {experiences} from "../constants";
 import React from "react";
+import {styles} from "../styles";
 
 export const Experience = (props) => {
     return (
@@ -12,7 +13,7 @@ export const Experience = (props) => {
             style={{backgroundImage: `url(${experienceBg})`}}
         >
             <div className="absolute inset-0 bg-custom-gray opacity-80 z-0"></div>
-            <h2 className="font-lulo uppercase text-4xl z-10">Experience</h2>
+            <h2 className={styles.pageTitle}>Experience</h2>
             <div className="z-10 w-full">
                 <VerticalTimeline>
                     {experiences.map((experience, index) => (

@@ -8,8 +8,8 @@ import React from "react";
 
 function App() {
     return (
-        <>
-            <div className="h-screen bg-cover bg-center"
+        <div className="h-screen w-full">
+            <div className="xl:h-screen h-auto bg-cover bg-center p-5"
                  style={{backgroundImage: `url(${samiul})`}}>
                 <Header/>
                 <Home/>
@@ -23,7 +23,7 @@ function App() {
                 })
             }
             <Footer/>
-        </>
+        </div>
     );
 }
 

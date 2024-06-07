@@ -2,10 +2,12 @@ import {skillsBg} from "../assets";
 import {skillGroups} from "../constants";
 import {motion, AnimatePresence, useInView} from "framer-motion";
 import {useRef, useState} from "react";
+import {styles} from "../styles";
 
 const Skills = (props) => {
     const [hoveredGroup, setHoveredGroup] = useState(null);
     const [hoveredItem, setHoveredItem] = useState(null);
+
 
     const handleGroupMouseEnter = (group) => {
         setHoveredGroup(group);
@@ -35,23 +37,23 @@ const Skills = (props) => {
     };
 
     const visibleItems = getVisibleItems();
-    const ref = useRef(null);
-    const isInView = useInView(ref);
+    const skillRef = useRef(null);
+    const isInView = useInView(skillRef, {amount: .25});
 
     return (
         <div id={props.id}
              key={props.id}
+             ref={skillRef}
              className="relative p-10 h-auto bg-cover text-white flex flex-col items-center space-y-10"
              style={{backgroundImage: `url(${skillsBg})`}}>
             <div className="absolute inset-0 bg-custom-gray opacity-80 z-0"></div>
-            <h2 className="font-lulo text-4xl z-10">SKILLS</h2>
-            <div className="flex justify-center space-x-10">
+            <h2 className={styles.pageTitle}>SKILLS</h2>
+            <div className="flex flex-col md:flex-row items-start">
                 {skillGroups.map((group, index) => {
                     return (
                         <motion.div
                             key={index}
-                            ref={ref}
-                            className="p-5 group relative overflow-hidden transition duration-300 ease-in-out transform hover:translate-y-3 hover:font-bold"
+                            className="mx-auto p-5 relative overflow-hidden transition duration-300 ease-in-out transform hover:translate-y-3 hover:font-bold"
                             onMouseEnter={() => handleGroupMouseEnter(group)}
                             onMouseLeave={handleGroupMouseLeave}
                             initial={{opacity: 0}}

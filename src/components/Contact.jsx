@@ -6,6 +6,7 @@ import emailjs from '@emailjs/browser';
 import {sanitizeEmail, sanitizeMessage, sanitizeName, validateForm} from "../utils/contact";
 import ReCAPTCHA from "react-google-recaptcha";
 import {contacts} from "../constants";
+import {styles} from "../styles";
 
 export const Contact = (props) => {
     const captchaRef = useRef(null);
@@ -122,15 +123,15 @@ export const Contact = (props) => {
             id={props.id}
             key={props.id}
             className="p-10 h-auto bg-custom-gray text-white flex flex-col items-center space-y-10">
-            <h2 className="font-lulo uppercase text-4xl z-10">Contact</h2>
+            <h2 className={styles.pageTitle}>Contact</h2>
             <div ref={ref} className="overflow-hidden flex sm:flex-col justify-center">
                 <motion.div
                     initial="hidden"
                     animate={isInView ? "show" : "hidden"}
                     viewport={{ once: false, amount: .25 }}
                     variants={slideIn('left', 'tween', 0.2, 1)}
-                    className="flex flex-row gap-5 items-center justify-center">
-                    <div className="bg-gray-600 flex-[.75] p-8 rounded-lg lg:min-w-[900px] md:min-w-[700px] min-w-[700px]">
+                    className="flex flex-col sm:flex-row gap-5 items-center justify-center">
+                    <div className="bg-gray-600 flex-[.75] p-7 sm:p-8 rounded-lg lg:min-w-[700px] md:min-w-[600px] min-w-[300px]">
                         <div className="overflow-hidden">
                             {
                                 (error?.message || success) &&
@@ -153,7 +154,7 @@ export const Contact = (props) => {
                         <form
                             onSubmit={handleSubmit}
                             ref={formRef}
-                            className="flex flex-col p-5 gap-6">
+                            className="flex flex-col sm:p-4 gap-5">
                             <label className="flex flex-col gap-2">
                                 <span className="font-medium">Your Name</span>
                                 <input type="text"
@@ -204,16 +205,16 @@ export const Contact = (props) => {
                             </button>
                         </form>
                     </div>
-                    <div className="flex-[.25] flex-col sm:flex-row items-center">
-                        {
-                            contacts.map((contact) => (
-                                <a href={contact.url}>
-                                    <img className="w-10 h-10" src={contact.icon} alt={contact.id}/>
-                                </a>
+                    {/*<div className="flex sm:flex-col flex-row items-center gap-2">*/}
+                    {/*    {*/}
+                    {/*        contacts.map((contact) => (*/}
+                    {/*            <a href={contact.url}>*/}
+                    {/*                <img className="w-10 h-10" src={contact.icon} alt={contact.id}/>*/}
+                    {/*            </a>*/}
 
-                            ))
-                        }
-                    </div>
+                    {/*        ))*/}
+                    {/*    }*/}
+                    {/*</div>*/}
 
                 </motion.div>
             </div>

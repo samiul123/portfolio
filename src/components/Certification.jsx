@@ -3,6 +3,7 @@ import React from "react";
 import {certifications} from "../constants";
 import {motion} from "framer-motion";
 import {fadeIn} from "../utils/motion";
+import {styles} from "../styles";
 
 export const Certification = (props) => {
     return (
@@ -13,16 +14,16 @@ export const Certification = (props) => {
             style={{ backgroundImage: `url(${certificationBg})` }}
         >
             <div className="absolute inset-0 bg-custom-gray opacity-80 z-0"></div>
-            <h2 className="font-lulo uppercase text-4xl z-10">Certifications</h2>
+            <h2 className={styles.pageTitle}>Certifications</h2>
             <motion.div
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: false, amount: 0.25 }}
-                className="mt-[50px] flex lg:flex-row flex-col gap-5">
+                className="m-auto flex lg:flex-row md:flex-row flex-col gap-5">
             {
                 certifications.map((certification, index) => (
                     <motion.div
-                        className="flex-1 p-5 rounded-lg items-center z-10"
+                        className="flex-1 rounded-lg items-center z-10"
                         whileHover={{scale: 1.1}}
                         variants={fadeIn('right', 'spring', index * 0.5, 0.75)}>
                             <a className="hover:cursor-pointer"
