@@ -4,7 +4,7 @@ const Home = (props) => {
             id={props.id}
             key={props.id}
             className='text-white'>
-            <h1 className="xl:text-8xl lg:text-6xl md:text-5xl sm:text-4xl text-5xl font-bold font-lulo">I
+            <h1 className="xl:text-8xl lg:text-6xl md:text-5xl text-4xl font-bold font-lulo">I
                 <span className='text-custom-green'>'</span>M <br/>
                 SAMIUL <br/>
                 MUSHFIK

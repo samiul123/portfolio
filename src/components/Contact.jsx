@@ -131,7 +131,7 @@ export const Contact = (props) => {
                     viewport={{ once: false, amount: .25 }}
                     variants={slideIn('left', 'tween', 0.2, 1)}
                     className="flex flex-col sm:flex-row gap-5 items-center justify-center">
-                    <div className="bg-gray-600 flex-[.75] p-7 sm:p-8 rounded-lg lg:min-w-[700px] md:min-w-[600px] min-w-[300px]">
+                    <div className="bg-gray-600 flex-[.75] p-4 sm:p-8 rounded-lg lg:min-w-[700px] md:min-w-[600px] min-w-[300px]">
                         <div className="overflow-hidden">
                             {
                                 (error?.message || success) &&
@@ -140,7 +140,7 @@ export const Contact = (props) => {
                                     animate={(error?.message !== '' || success !== '') && isInView ? 'show' : 'hidden'}
                                     variants={variants}
                                     className={`${error?.message !== '' ? 'bg-red-500' : 'bg-custom-green-v2'} p-2 gap-2 flex 
-                            rounded-lg w-fit mx-auto items-center justify-center`}>
+                            rounded-lg w-fit mx-auto items-center justify-center mb-3`}>
                                     {error?.message || success}
                                     <button type="submit"
                                             onClick={handleClose}
