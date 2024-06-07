@@ -4,6 +4,7 @@ import { educations } from '../constants';
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 import './education.css';
+import {styles} from "../styles";
 
 export const Education = (props) => {
     return (
@@ -14,7 +15,7 @@ export const Education = (props) => {
             style={{ backgroundImage: `url(${educationBg})` }}
         >
             <div className="absolute inset-0 bg-custom-gray opacity-80 z-0"></div>
-            <h2 className="font-lulo uppercase text-4xl z-10">Education</h2>
+            <h2 className={styles.pageTitle}>Education</h2>
             <div className="z-10 w-full">
                 <VerticalTimeline>
                     {educations.map((education, index) => (

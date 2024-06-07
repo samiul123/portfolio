@@ -2,6 +2,7 @@ import { publicationBg, rightArrow, leftArrow } from "../assets";
 import React, { useState } from "react";
 import { publications } from "../constants";
 import {AnimatePresence, motion} from "framer-motion";
+import {styles} from "../styles";
 
 export const Publication = (props) => {
     const [showAbstract, setShowAbstract] = useState(false);
@@ -40,7 +41,7 @@ export const Publication = (props) => {
             style={{ backgroundImage: `url(${publicationBg})` }}
         >
             <div className="absolute inset-0 bg-custom-gray opacity-80 z-0"></div>
-            <h2 className="font-lulo uppercase text-4xl z-10">Publication</h2>
+            <h2 className={styles.pageTitle}>Publication</h2>
             {publications.map((publication, index) => (
                 <motion.div
                     key={index} className="w-full flex p-5 z-10 bg-custom-gray rounded-lg relative"
