@@ -19,7 +19,7 @@ export const fadeIn = (direction, type, delay, duration) => {
     };
 };
 
-export const slideIn = (direction, type, delay, duration) => {
+export const slideIn = (direction, type, delay= 0, duration = 0) => {
     return {
         hidden: {
             x: direction === 'left' ? '-100%' : direction === 'right' ? '100%' : 0,
