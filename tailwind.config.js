@@ -12,6 +12,9 @@ module.exports = {
       },
       fontFamily: {
         lulo: ['Lulo', 'sans-serif'],
+      },
+      screens: {
+        'max-md': {'max': '1023px'}
       }
     },
   },
