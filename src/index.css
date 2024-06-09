@@ -20,6 +20,10 @@
   }
 }
 
+.react-slideshow-container+ul.indicators .each-slideshow-indicator:before {
+  background: #ffffff !important;
+}
+
 .no-scroll {
   overflow: hidden;
 }
