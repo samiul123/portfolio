@@ -205,16 +205,16 @@ export const Contact = (props) => {
                             </button>
                         </form>
                     </div>
-                    {/*<div className="flex sm:flex-col flex-row items-center gap-2">*/}
-                    {/*    {*/}
-                    {/*        contacts.map((contact) => (*/}
-                    {/*            <a href={contact.url}>*/}
-                    {/*                <img className="w-10 h-10" src={contact.icon} alt={contact.id}/>*/}
-                    {/*            </a>*/}
+                    <div className="flex sm:flex-col flex-row items-center gap-2">
+                        {
+                            contacts.map((contact) => (
+                                <a href={contact.url}>
+                                    <img className="w-10 h-10" src={contact.icon} alt={contact.id}/>
+                                </a>
 
-                    {/*        ))*/}
-                    {/*    }*/}
-                    {/*</div>*/}
+                            ))
+                        }
+                    </div>
 
                 </motion.div>
             </div>
