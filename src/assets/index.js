@@ -6,6 +6,7 @@ import educationBg from './backgrounds/education-bg.jpg';
 import experienceBg from './backgrounds/experience-bg.jpg';
 import publicationBg from './backgrounds/publication-bg.jpg';
 import certificationBg from './backgrounds/certification-bg.jpg';
+import projectBg from './backgrounds/project-bg.jpg';
 
 import java from './tech/java-original.svg';
 import python from './tech/python.png';
@@ -37,6 +38,7 @@ import git from './tech/git.svg';
 import kafka from './tech/kafka.svg';
 import kibana from './tech/kibana.svg';
 import jira from './tech/jira.svg';
+import github from './tech/github.svg';
 
 import buet from './education/buet-logo.png';
 import umd from './education/umd-logo.png';
@@ -53,6 +55,8 @@ import leftArrow from './icons/nav-arrow-left.svg';
 import send from './icons/send.png';
 import close from './icons/close.svg';
 import menu from './icons/menu.svg';
+import show from './icons/show.svg';
+import hide from './icons/hide.svg';
 
 import udemy from './certification/udemy.svg';
 import algoxpert from './certification/algoxpert.png';
@@ -121,5 +125,9 @@ export {
     linkedin,
     medium,
     gmail,
-    menu
+    menu,
+    projectBg,
+    github,
+    show,
+    hide
 };

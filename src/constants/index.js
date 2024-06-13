@@ -40,6 +40,7 @@ import {Experience} from "../components/experience";
 import {Publication} from "../components/publication";
 import {Certification} from "../components/Certification";
 import {Contact} from "../components/Contact";
+import {Project} from "../components/Project";
 
 const navLinks = [
     {
@@ -55,7 +56,7 @@ const navLinks = [
     {
         id: 'projects',
         title: 'PROJECTS',
-        route: null
+        route: Project
     },
     {
         id: 'education',
@@ -351,4 +352,27 @@ const contacts = [
     }
 ]
 
-export {navLinks, skillGroups, educations, experiences, publications, certifications, contacts}
+const projects = [
+    {
+        id: 'mindquest',
+        title: 'Mind Quest',
+        description: 'A mental health related application that facilitates community engagement, awareness regarding mental health.',
+        githubUrl: 'https://github.com/samiul123/mindquest',
+        demoUrl: 'https://drive.google.com/file/d/1VQ6SahYI7aexdS3wnH0OnkyAMKZCZ7ga/view?usp=sharing',
+    },
+    {
+        id: 'portfolio',
+        title: 'Portfolio',
+        description: 'A website to showcase my achievements and experience gathered so far.',
+        githubUrl: 'https://github.com/samiul123/samiul123.github.io',
+        demoUrl: 'https://samiul123.github.io',
+    },
+    {
+        id: 'bug-fixing-analysis',
+        title: 'Bug Fixing Analysis',
+        description: 'Data analysis of open and closed bugs of Pytorch and Tensorflow.',
+        githubUrl: 'https://github.com/samiul123/bug-fixing-analysis',
+    }
+]
+
+export {navLinks, skillGroups, educations, experiences, publications, certifications, contacts, projects}
