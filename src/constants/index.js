@@ -33,7 +33,18 @@ import {
     jira,
     buet,
     umd,
-    stiboDX, konasl, algoxpert, udemy, systemxpert, hadoop, datascienceBootcamp, linkedin, medium, gmail
+    stiboDX,
+    konasl,
+    algoxpert,
+    udemy,
+    systemxpert,
+    hadoop,
+    datascienceBootcamp,
+    linkedin,
+    medium,
+    gmail,
+    mindquest,
+    portfolio, bugAnalysis
 } from "../assets";
 import {Education} from "../components/education";
 import {Experience} from "../components/experience";
@@ -355,10 +366,11 @@ const contacts = [
 const projects = [
     {
         id: 'mindquest',
-        title: 'Mind Quest',
+        title: 'MindQuest',
         description: 'A mental health related application that facilitates community engagement, awareness regarding mental health.',
         githubUrl: 'https://github.com/samiul123/mindquest',
         demoUrl: 'https://drive.google.com/file/d/1VQ6SahYI7aexdS3wnH0OnkyAMKZCZ7ga/view?usp=sharing',
+        image: mindquest
     },
     {
         id: 'portfolio',
@@ -366,12 +378,14 @@ const projects = [
         description: 'A website to showcase my achievements and experience gathered so far.',
         githubUrl: 'https://github.com/samiul123/samiul123.github.io',
         demoUrl: 'https://samiul123.github.io',
+        image: portfolio
     },
     {
         id: 'bug-fixing-analysis',
         title: 'Bug Fixing Analysis',
         description: 'Data analysis of open and closed bugs of Pytorch and Tensorflow.',
         githubUrl: 'https://github.com/samiul123/bug-fixing-analysis',
+        image: bugAnalysis
     }
 ]
 
