@@ -1,9 +1,10 @@
 {
   "files": {
-    "main.css": "/static/css/main.7d797817.css",
-    "main.js": "/static/js/main.4ed069cb.js",
+    "main.css": "/static/css/main.4df42d5f.css",
+    "main.js": "/static/js/main.2b5e1ec9.js",
     "static/js/453.20815797.chunk.js": "/static/js/453.20815797.chunk.js",
     "static/media/project-bg.jpg": "/static/media/project-bg.06a8012db47dc4024781.jpg",
+    "static/media/portfolio.jpg": "/static/media/portfolio.222cd2cccb15ec4de9da.jpg",
     "static/media/skills-bg.jpg": "/static/media/skills-bg.9def6d7aa5cf99e9ce7e.jpg",
     "static/media/publication-bg.jpg": "/static/media/publication-bg.d926389c814b351286f6.jpg",
     "static/media/experience-bg.jpg": "/static/media/experience-bg.38cebee1a60795f882e0.jpg",
@@ -12,6 +13,8 @@
     "static/media/hadoop.png": "/static/media/hadoop.616482f378e888d70916.png",
     "static/media/datascience-bootcamp.png": "/static/media/datascience-bootcamp.111d1be8eb06f2d1bfeb.png",
     "static/media/education-bg.jpg": "/static/media/education-bg.0c7180386ca9923ba35c.jpg",
+    "static/media/mindquest.png": "/static/media/mindquest.10d181118ed98a68cbc4.png",
+    "static/media/bug-fixing-analysis.jpeg": "/static/media/bug-fixing-analysis.9a7cff80f1b79d68005e.jpeg",
     "static/media/resume.pdf": "/static/media/resume.9ee18fb9d7519b5c195b.pdf",
     "static/media/stiboDx.png": "/static/media/stiboDx.52d7767e331b4df502d9.png",
     "static/media/systems-expert.png": "/static/media/systems-expert.47ed5907e8ddf23ee8f1.png",
@@ -64,12 +67,12 @@
     "static/media/close.svg": "/static/media/close.8205e1fa6d840cf67cac293ee29d33e5.svg",
     "static/media/nav-arrow-left.svg": "/static/media/nav-arrow-left.9ea2a2449a34f2f511d41aea75351cdd.svg",
     "static/media/nav-arrow-right.svg": "/static/media/nav-arrow-right.1aac9c773bf0b489297d62d718a3a694.svg",
-    "main.7d797817.css.map": "/static/css/main.7d797817.css.map",
-    "main.4ed069cb.js.map": "/static/js/main.4ed069cb.js.map",
+    "main.4df42d5f.css.map": "/static/css/main.4df42d5f.css.map",
+    "main.2b5e1ec9.js.map": "/static/js/main.2b5e1ec9.js.map",
     "453.20815797.chunk.js.map": "/static/js/453.20815797.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7d797817.css",
-    "static/js/main.4ed069cb.js"
+    "static/css/main.4df42d5f.css",
+    "static/js/main.2b5e1ec9.js"
   ]
 }
