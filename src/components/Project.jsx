@@ -1,26 +1,99 @@
 import {projectBg, github, show, hide} from "../assets"; // Ensure you import other assets as needed
 import { styles } from "../styles";
-import {projects, skillGroups} from "../constants";
+import {projects} from "../constants";
 import {useEffect, useState} from "react";
 import {chunkArray} from "../utils/helpers";
-import {Slide} from "react-slideshow-image";
+import {motion} from "framer-motion";
+import {fadeIn, staggerContainer} from "../utils/motion";
+
+const ProjectCard = ({
+                         id,
+                         title,
+                         description,
+                         image,
+                         githubUrl,
+                         demo,
+                         index,
+                         active,
+                         handleClick,
+                     }) => {
+    return (
+        <motion.div
+            variants={fadeIn('right', 'spring', index * 0.5, 0.75)}
+            className={`relative ${
+                active === id ? 'lg:flex-[3] flex-[10]' : 'lg:flex-[1] flex-[1]'
+            } flex items-center justify-center h-[420px] cursor-pointer rounded-b-[24px] overflow-hidden`}
+            onClick={() => handleClick(id)}
+        >
+            <div className="absolute top-0 left-0 w-full h-full bg-custom-gray opacity-80"></div>
+
+            <img
+                src={image}
+                alt={title}
+                className="absolute w-full h-full object-cover rounded-b-[24px]"
+            />
+
+            {active !== id ? (
+                <div className="relative flex items-center justify-start pr-[4.5rem]">
+                    <h3
+                        className="font-extrabold uppercase w-[150px] h-[30px]
+                        whitespace-nowrap sm:text-[20px] text-[18px] tracking-[1px]
+                        lg:bottom-[7rem] lg:rotate-[-90deg] lg:origin-[0,0]
+                        leading-none"
+                    >
+                        {title}
+                    </h3>
+                </div>
+            ) : (
+                <div
+                    className="absolute bottom-0 p-8 justify-start w-full flex-col rounded-b-[24px] bg-custom-gray opacity-80 z-10">
+                    <div className="absolute inset-0 flex justify-end m-5">
+                        <div
+                            onClick={() => window.open(githubUrl, '_blank')}
+                            className="sm:w-11 sm:h-11 w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
+                        >
+                            <img
+                                src={github}
+                                alt="source code"
+                                className="w-4/5 h-4/5 object-contain"
+                            />
+                        </div>
+                    </div>
+
+                    <h2 className="font-bold sm:text-[32px] text-[24px] uppercase sm:mt-0 -mt-[1rem]">
+                        {title}
+                    </h2>
+                    <p
+                        className="sm:text-[14px] text-[12px]
+                        max-w-3xl sm:leading-[24px] leading-[18px]
+                        font-poppins tracking-[1px]"
+                    >
+                        {description}
+                    </p>
+                    <button
+                        className="flex justify-start gap-3 sm:text-[16px] text-[14px]
+                        font-bold items-center py-5 pl-3 pr-3
+                        whitespace-nowrap sm:w-[138px] sm:h-[50px]
+                        w-[125px] h-[46px] rounded-[10px]
+                        sm:mt-[22px] mt-[16px] bg-black transition duration-[0.2s] ease-in-out"
+                        onClick={() => window.open(demo, '_blank')}
+                    >
+                        <img
+                            src={show}
+                            alt="Show"
+                            className="sm:w-[34px] sm:h-[34px] w-[30px] h-[30px] object-contain"
+                        />
+                        DEMO
+                    </button>
+                </div>
+            )}
+        </motion.div>
+    );
+};
+
 
 export const Project = (props) => {
-    const [chunkedProjects, setChunkedProjects] = useState([]);
-    const [chunkSize, setChunkSize] = useState(0);
-
-    const handleResize = () => {
-        let chunkSize = 1;
-        if (window.innerWidth >= 1024) chunkSize = 3;
-        setChunkSize(chunkSize);
-        setChunkedProjects(chunkArray(projects, chunkSize));
-    };
-
-    useEffect(() => {
-        handleResize();
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
-    }, []);
+    const [active, setActive] = useState('mindquest');
 
     return (
         <div id={props.id}
@@ -29,61 +102,24 @@ export const Project = (props) => {
              style={{backgroundImage: `url(${projectBg})`}}>
             <div className="absolute inset-0 bg-custom-gray opacity-80 z-0"></div>
             <h2 className={styles.pageTitle}>PROJECTS</h2>
-            <div className="relative z-10 w-screen flex-1">
-                <Slide arrows={false}
-                       indicators={chunkSize < projects.length}
-                       autoplay={chunkSize < projects.length}
-                       canSwipe={chunkSize < projects.length}
-                >
-                    {
-                        chunkedProjects.map((group, groupIndex) => (
-                            <div key={groupIndex} className="flex flex-wrap w-full mx-auto items-center justify-center gap-5">
-                                {group.map((item, index) => (
-                                    <div key={index}
-                                         className="bg-custom-gray opacity-80 rounded-lg flex flex-col items-start justify-start
-                                         p-5 w-full max-w-lg min-h-[250px] relative">
-                                        <div className="flex items-center justify-between w-full">
-                                            <h1 className="text-3xl">{item.title}</h1>
-                                            <a href={item.githubUrl} className="w-8 h-8">
-                                                <img src={github} alt={item.title} className="w-full"/>
-                                            </a>
-                                        </div>
-                                        <h3 className="text-xl mt-2">{item.description}</h3>
-                                        <div className={`mt-auto shadow-xl rounded-lg flex ${item.demoUrl ? 
-                                            'bg-custom-green-v2': 'bg-red-600'} p-2`}>
-                                            <a href={item.demoUrl}
-                                               className={`mt-auto flex items-center justify-center 
-                                                rounded-lg self-end gap-1 ${!item.demoUrl ? 'pointer-events-none' : ''}`}>
-                                                DEMO
-                                                <img src={item.demoUrl ? show : hide} alt="show" className="w-5 h-5"/>
-                                            </a>
-
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
-                        ))
-                    }
-                </Slide>
-            </div>
-            {/*<div className="flex items-center justify-center gap-4 z-10 relative">*/}
-            {/*    {*/}
-            {/*        projects.map((project, index) => (*/}
-            {/*            <div key={index}*/}
-            {/*                 className="bg-custom-gray opacity-80 rounded-lg flex flex-col items-start justify-between*/}
-            {/*                 p-5 w-full max-w-lg min-h-[250px]">*/}
-            {/*                <div className="flex items-center justify-between w-full">*/}
-            {/*                    <h1 className="text-3xl">{project.title}</h1>*/}
-            {/*                    <a href={project.githubUrl} className="w-8">*/}
-            {/*                        <img src={github} alt={project.title} className="w-full"/>*/}
-            {/*                    </a>*/}
-            {/*                </div>*/}
-            {/*                <h3 className="text-xl mt-2">{project.description}</h3>*/}
-            {/*                <button className="mt-5 shadow-xl rounded-lg">DEMO</button>*/}
-            {/*            </div>*/}
-            {/*        ))*/}
-            {/*    }*/}
-            {/*</div>*/}
+                <motion.div
+                    variants={staggerContainer}
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{once: false, amount: 0.25}}
+                    className={`${styles.innerWidth} mx-auto flex flex-col`}>
+                    <div className="flex lg:flex-row flex-col max-w-6xl lg:min-h-[40vh] min-h-[70vh] gap-5 p-8">
+                        {projects.map((project, index) => (
+                            <ProjectCard
+                                key={project.id}
+                                index={index}
+                                {...project}
+                                active={active}
+                                handleClick={setActive}
+                            />
+                        ))}
+                    </div>
+                </motion.div>
         </div>
     )
 }

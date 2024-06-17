@@ -68,6 +68,10 @@ import linkedin from './contact/linkedin.svg';
 import medium from './contact/medium.svg';
 import gmail from './contact/gmail.svg';
 
+import mindquest from './projects/mindquest.png';
+import portfolio from './projects/portfolio.jpg';
+import bugAnalysis from './projects/bug-fixing-analysis.jpeg';
+
 export {
     logo,
     samiul,
@@ -129,5 +133,8 @@ export {
     projectBg,
     github,
     show,
-    hide
+    hide,
+    mindquest,
+    portfolio,
+    bugAnalysis
 };
