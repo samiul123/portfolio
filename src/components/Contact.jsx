@@ -158,6 +158,7 @@ export const Contact = (props) => {
                             <label className="flex flex-col gap-2">
                                 <span className="font-medium">Your Name</span>
                                 <input type="text"
+                                       autoComplete="on"
                                        name="name"
                                        value={form.name}
                                        placeholder="What's your name?"
@@ -168,7 +169,8 @@ export const Contact = (props) => {
                             </label>
                             <label className="flex flex-col gap-2">
                                 <span className="font-medium">Your Email</span>
-                                <input type="text"
+                                <input type="email"
+                                       autoComplete="on"
                                        name="email"
                                        value={form.email}
                                        placeholder="What's your email?"
@@ -208,7 +210,7 @@ export const Contact = (props) => {
                     <div className="flex sm:flex-col flex-row items-center gap-2">
                         {
                             contacts.map((contact) => (
-                                <a href={contact.url}>
+                                <a key={contact.id} href={contact.url}>
                                     <img className="w-10 h-10" src={contact.icon} alt={contact.id}/>
                                 </a>
 

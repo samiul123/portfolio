@@ -3,6 +3,5 @@ export const chunkArray = (array, size) => {
     for (let i = 0; i < array.length; i += size) {
         result.push(array.slice(i, i + size));
     }
-    console.log("RESULT: ", result)
     return result;
 };

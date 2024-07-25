@@ -51,9 +51,9 @@ const SkillGroup = (props) => {
             <div className="grid grid-cols-3 gap-4">
                 {props.group.items.map((item, i) => (
                     <motion.img
+                        key={i}
                         onMouseEnter={() => handleMouseEnter(item)}
                         onMouseLeave={handleMouseLeave}
-                        key={i}
                         src={item.logo}
                         alt="logo"
                         className="w-12 h-auto mx-auto"
@@ -115,7 +115,8 @@ const Skills = (props) => {
                         chunkedSkillGroups.map((pair, pairIndex) => (
                             <div key={pairIndex} className="flex flex-wrap w-full">
                                 {pair.map((group, index) => (
-                                    <SkillGroup index={index}
+                                    <SkillGroup key={index}
+                                                index={index}
                                                 group={group}
                                                 isInView={isInView}
                                                 handleGroupMouseEnter={handleGroupMouseEnter}
