@@ -48,7 +48,6 @@ export const Publication = (props) => {
             id={props.id}
             key={props.id}
             className="relative p-10 h-auto bg-cover text-white flex flex-col items-center space-y-10 uppercase"
-            style={{ backgroundImage: `url(${publicationBg})` }}
         >
             <Background images={images}/>
             <h2 className={styles.pageTitle}>Publication</h2>
