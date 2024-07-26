@@ -1,7 +1,7 @@
 import React, {useCallback, useEffect, useRef, useState} from "react";
 import {motion, useInView} from "framer-motion";
 import {slideIn, vibrate} from "../utils/motion";
-import {close, send} from "../assets";
+import {close, send, sendwebp} from "../assets";
 import emailjs from '@emailjs/browser';
 import {sanitizeEmail, sanitizeMessage, sanitizeName, validateForm} from "../utils/contact";
 import ReCAPTCHA from "react-google-recaptcha";
@@ -199,11 +199,15 @@ export const Contact = (props) => {
                                 className="p-3 flex w-fit gap-2 items-center justify-center bg-custom-gray font-bold
                             rounded-lg hover:bg-black">
                                 {loading ? 'SENDING' : 'SEND'}
-                                <img
-                                    src={send}
-                                    alt="send"
-                                    className="sm:w-[26px] sm:h-[26px] w-[23px] h-[23px] object-contain"
-                                />
+                                <picture>
+                                    <source type="image/webp" srcSet={sendwebp}/>
+                                    <source type="image/png" srcSet={send}/>
+                                    <img
+                                        src={send}
+                                        alt="send"
+                                        className="sm:w-[26px] sm:h-[26px] w-[23px] h-[23px] object-contain"
+                                    />
+                                </picture>
                             </button>
                         </form>
                     </div>

@@ -1,4 +1,5 @@
 import logo from './personal/logo.png';
+import logowebp from './personal/logo.webp';
 
 import samiul from './backgrounds/samiul-v2.png';
 import samiulWebp from './backgrounds/samiul-v2.webp';
@@ -66,6 +67,7 @@ import resumePdf from './resume/resume.pdf';
 import rightArrow from './icons/nav-arrow-right.svg';
 import leftArrow from './icons/nav-arrow-left.svg';
 import send from './icons/send.png';
+import sendwebp from './icons/send.webp';
 import close from './icons/close.svg';
 import menu from './icons/menu.svg';
 import show from './icons/show.svg';
@@ -176,5 +178,7 @@ export {
     algoxpertWebp,
     systemxpertWebp,
     hadoopWebp,
-    datascienceBootcampWebp
+    datascienceBootcampWebp,
+    sendwebp,
+    logowebp
 };

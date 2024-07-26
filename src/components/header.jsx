@@ -1,7 +1,8 @@
 import {useEffect, useState} from "react";
-import {logo, menu, close} from "../assets";
+import {logo, menu, close, logowebp} from "../assets";
 import { navLinks } from "../constants";
 import {motion} from "framer-motion";
+import {WebsiteLogo} from "./WebsiteLogo";
 
 function Header() {
     const [activeMenu, setActiveMenu] = useState('home');
@@ -28,11 +29,10 @@ function Header() {
 
     return (
         <header className="flex justify-between items-center w-full">
-            <img src={logo} alt="Logo" className="h-10 cursor-pointer" onClick={() => {
-                setActiveMenu('home');
-                window.scrollTo(0, 0);
-            }}/>
-
+            <WebsiteLogo className="h-10 cursor-pointer" onClick={() => {
+                setActiveMenu('home')
+                window.scrollTo(0, 0)}}
+            />
             <div className="fixed top-6 right-5 z-50 lg:hidden flex items-center">
                 <motion.button
                     animate={{rotate: menuOpen ? 360 : 0}}
