@@ -51,16 +51,27 @@ const SkillGroup = (props) => {
             />
             <div className="grid grid-cols-3 gap-4">
                 {props.group.items.map((item, i) => (
-                    <motion.img
+                    <motion.div
                         key={i}
                         onMouseEnter={() => handleMouseEnter(item)}
                         onMouseLeave={handleMouseLeave}
-                        src={item.logo}
-                        alt="logo"
                         className="w-12 h-auto mx-auto"
                         whileHover={{scale: 1.25}}
                         transition={{duration: 0.3}}
-                    />
+                    >
+                        <picture>
+                            {
+                                item.images.map((image, index) => (
+                                    <>
+                                        <source key={`${i}_${index}`} type={image.type} srcSet={image.srcSet}/>
+                                        {image.fallback && <img src={image.srcSet} alt={item.name}
+                                                                className="w-full h-full object-contain"/>}
+                                    </>
+                                ))
+                            }
+                        </picture>
+                    </motion.div>
+
                 ))}
             </div>
             {/*<div className="flex items-center justify-center mt-5 z-20">{hoveredItem?.name}</div>*/}
@@ -72,10 +83,10 @@ const Skills = (props) => {
     const [hoveredGroup, setHoveredGroup] = useState(null);
     const [chunkedSkillGroups, setChunkedSkillGroups] = useState([]);
     const [chunkSize, setChunkSize] = useState(0);
-    const images=[{
-            type: "image/webp",
-            srcSet: skillsWebp,
-            fallback: false
+    const images = [{
+        type: "image/webp",
+        srcSet: skillsWebp,
+        fallback: false
         }, {
         type: "image/jpeg",
             srcSet: skillsBg,

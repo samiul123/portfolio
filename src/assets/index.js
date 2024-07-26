@@ -17,6 +17,7 @@ import projectWebp from './backgrounds/project-bg.webp';
 
 import java from './tech/java-original.svg';
 import python from './tech/python.png';
+import pythonwebp from './tech/python.webp';
 import apacheCamel from './tech/apache-camel.svg';
 import spring from './tech/spring.svg';
 import javascript from './tech/javascript.svg';
@@ -156,5 +157,6 @@ export {
     portfolio,
     portfoliowebp,
     bugAnalysis,
-    bugAnalysisWebp
+    bugAnalysisWebp,
+    pythonwebp
 };

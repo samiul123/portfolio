@@ -48,7 +48,7 @@ import {
     bugAnalysis,
     mindquestwebp,
     portfoliowebp,
-    bugAnalysisWebp
+    bugAnalysisWebp, pythonwebp
 } from "../assets";
 import {Education} from "../components/education";
 import {Experience} from "../components/experience";
@@ -106,48 +106,107 @@ const skillGroups = [
         items: [
             {
                 id: 'java',
-                logo: java,
-                name: 'JAVA'
+                name: 'JAVA',
+                images: [
+                    {
+                        type: "image/svg+xml",
+                        srcSet: java,
+                        fallback: true
+                    }
+                ]
             },
             {
                 id: 'python',
-                logo: python,
-                name: 'PYTHON'
+                name: 'PYTHON',
+                images: [
+                    {
+                        type: "image/webp",
+                        srcSet: pythonwebp,
+                        fallback: false
+                    },
+                    {
+                        type: "image/png",
+                        srcSet: python,
+                        fallback: true
+                    }
+                ]
             },
             {
                 id: 'javascript',
-                logo: javascript,
-                name: 'JAVASCRIPT'
+                name: 'JAVASCRIPT',
+                images: [
+                    {
+                        type: "image/svg+xml",
+                        srcSet: javascript,
+                        fallback: true
+                    }
+                ]
             },
             {
                 id: 'typescript',
-                logo: typescript,
-                name: 'TYPESCRIPT'
+                name: 'TYPESCRIPT',
+                images: [
+                    {
+                        type: "image/svg+xml",
+                        srcSet: typescript,
+                        fallback: true
+                    }
+                ]
             },
             {
                 id: 'cpp',
-                logo: cpp,
-                name: 'CPP'
+                name: 'CPP',
+                images: [
+                    {
+                        type: "image/svg+xml",
+                        srcSet: cpp,
+                        fallback: true
+                    }
+                ]
             },
             {
                 id: 'html',
-                logo: html,
-                name: 'HTML'
+                name: 'HTML',
+                images: [
+                    {
+                        type: "image/svg+xml",
+                        srcSet: html,
+                        fallback: true
+                    }
+                ]
             },
             {
                 id: 'css',
-                logo: css,
-                name: 'CSS'
+                name: 'CSS',
+                images: [
+                    {
+                        type: "image/svg+xml",
+                        srcSet: css,
+                        fallback: true
+                    }
+                ]
             },
             {
                 id: 'bash',
-                logo: bash,
-                name: 'BASH'
+                name: 'BASH',
+                images: [
+                    {
+                        type: "image/svg+xml",
+                        srcSet: bash,
+                        fallback: true
+                    }
+                ]
             },
             {
                 id: 'graphql',
-                logo: graphql,
-                name: 'GRAPHQL'
+                name: 'GRAPHQL',
+                images: [
+                    {
+                        type: "image/svg+xml",
+                        srcSet: graphql,
+                        fallback: true
+                    }
+                ]
             }
         ]
     },
@@ -156,48 +215,102 @@ const skillGroups = [
         items: [
             {
                 id: 'apache-camel',
-                logo: apacheCamel,
                 name: 'APACHE CAMEL',
+                images: [
+                    {
+                        type: "image/svg+xml",
+                        srcSet: apacheCamel,
+                        fallback: true
+                    }
+                ]
             },
             {
                 id: 'spring-boot',
-                logo: spring,
                 name: 'SPRING BOOT',
+                images: [
+                    {
+                        type: "image/svg+xml",
+                        srcSet: spring,
+                        fallback: true
+                    }
+                ]
             },
             {
                 id: 'nodejs',
-                logo: nodejs,
                 name: 'NODEJS',
+                images: [
+                    {
+                        type: "image/svg+xml",
+                        srcSet: nodejs,
+                        fallback: true
+                    }
+                ]
             },
             {
                 id: 'react',
-                logo: react,
                 name: 'REACT',
+                images: [
+                    {
+                        type: "image/svg+xml",
+                        srcSet: react,
+                        fallback: true
+                    }
+                ]
             },
             {
                 id: 'jquery',
-                logo: jquery,
                 name: 'JQUERY',
+                images: [
+                    {
+                        type: "image/svg+xml",
+                        srcSet: jquery,
+                        fallback: true
+                    }
+                ]
             },
             {
                 id: 'redux',
-                logo: redux,
                 name: 'REDUX',
+                images: [
+                    {
+                        type: "image/svg+xml",
+                        srcSet: redux,
+                        fallback: true
+                    }
+                ]
             },
             {
                 id: 'flutter',
-                logo: flutter,
                 name: 'FLUTTER',
+                images: [
+                    {
+                        type: "image/svg+xml",
+                        srcSet: flutter,
+                        fallback: true
+                    }
+                ]
             },
             {
                 id: 'jest',
-                logo: jest,
                 name: 'JEST',
+                images: [
+                    {
+                        type: "image/svg+xml",
+                        srcSet: jest,
+                        fallback: true
+                    }
+                ]
             },
             {
                 id: 'jasmine',
-                logo: jasmine,
                 name: 'JASMINE',
+                images: [
+                    {
+                        type: "image/svg+xml",
+                        srcSet: jasmine,
+                        fallback: true
+                    }
+                ]
             }
         ]
     },
@@ -206,23 +319,47 @@ const skillGroups = [
         items: [
             {
                 id: 'oracle',
-                logo: oracle,
                 name: 'ORACLE',
+                images: [
+                    {
+                        type: "image/svg+xml",
+                        srcSet: oracle,
+                        fallback: true
+                    }
+                ]
             },
             {
                 id: 'postgresql',
-                logo: postgresql,
                 name: 'POSTGRESQL',
+                images: [
+                    {
+                        type: "image/svg+xml",
+                        srcSet: postgresql,
+                        fallback: true
+                    }
+                ]
             },
             {
                 id: 'redis',
-                logo: redis,
                 name: 'REDIS',
+                images: [
+                    {
+                        type: "image/svg+xml",
+                        srcSet: redis,
+                        fallback: true
+                    }
+                ]
             },
             {
                 id: 'mariadb',
-                logo: mariadb,
                 name: 'MARIADB',
+                images: [
+                    {
+                        type: "image/svg+xml",
+                        srcSet: mariadb,
+                        fallback: true
+                    }
+                ]
             }
         ]
     },
@@ -231,43 +368,91 @@ const skillGroups = [
         items: [
             {
                 id: 'nginx',
-                logo: nginx,
                 name: 'NGINX',
+                images: [
+                    {
+                        type: "image/svg+xml",
+                        srcSet: nginx,
+                        fallback: true
+                    }
+                ]
             },
             {
                 id: 'jenkins',
-                logo: jenkins,
-                name: 'JENKINS'
+                name: 'JENKINS',
+                images: [
+                    {
+                        type: "image/svg+xml",
+                        srcSet: jenkins,
+                        fallback: true
+                    }
+                ]
             },
             {
                 id: 'makefile',
-                logo: makefile,
                 name: 'MAKEFILE',
+                images: [
+                    {
+                        type: "image/svg+xml",
+                        srcSet: makefile,
+                        fallback: true
+                    }
+                ]
             },
             {
                 id: 'gradle',
-                logo: gradle,
                 name: 'GRADLE',
+                images: [
+                    {
+                        type: "image/svg+xml",
+                        srcSet: gradle,
+                        fallback: true
+                    }
+                ]
             },
             {
                 id: 'git',
-                logo: git,
                 name: 'GIT',
+                images: [
+                    {
+                        type: "image/svg+xml",
+                        srcSet: git,
+                        fallback: true
+                    }
+                ]
             },
             {
                 id: 'kafka',
-                logo: kafka,
                 name: 'KAFKA',
+                images: [
+                    {
+                        type: "image/svg+xml",
+                        srcSet: kafka,
+                        fallback: true
+                    }
+                ]
             },
             {
                 id: 'kibana',
-                logo: kibana,
                 name: 'KIBANA',
+                images: [
+                    {
+                        type: "image/svg+xml",
+                        srcSet: kibana,
+                        fallback: true
+                    }
+                ]
             },
             {
                 id: 'jira',
-                logo: jira,
                 name: 'JIRA',
+                images: [
+                    {
+                        type: "image/svg+xml",
+                        srcSet: jira,
+                        fallback: true
+                    }
+                ]
             }
         ]
     }
