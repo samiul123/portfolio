@@ -62,11 +62,11 @@ const SkillGroup = (props) => {
                         <picture>
                             {
                                 item.images.map((image, index) => (
-                                    <>
-                                        <source key={`${i}_${index}`} type={image.type} srcSet={image.srcSet}/>
+                                    <div key={`${i}_${index}`}>
+                                        <source type={image.type} srcSet={image.srcSet}/>
                                         {image.fallback && <img src={image.srcSet} alt={item.name}
                                                                 className="w-full h-full object-contain"/>}
-                                    </>
+                                    </div>
                                 ))
                             }
                         </picture>

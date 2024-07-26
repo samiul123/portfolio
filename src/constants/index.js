@@ -48,7 +48,7 @@ import {
     bugAnalysis,
     mindquestwebp,
     portfoliowebp,
-    bugAnalysisWebp, pythonwebp, umdwebp, buetwebp
+    bugAnalysisWebp, pythonwebp, umdwebp, buetwebp, stiboDXWebp, konaslWebp
 } from "../assets";
 import {Education} from "../components/education";
 import {Experience} from "../components/experience";
@@ -504,13 +504,37 @@ const experiences = [
         title: 'Software Engineer',
         company: 'Stibo DX',
         date: 'Aug 2022 - Aug 2023',
-        logo: stiboDX
+        logo: stiboDX,
+        images: [
+            {
+                type: "image/webp",
+                srcSet: stiboDXWebp,
+                fallback: false
+            },
+            {
+                type: "image/png",
+                srcSet: stiboDX,
+                fallback: true
+            }
+        ]
     },
     {
         title: 'Software Engineer',
         company: 'Kona Software Lab Ltd.',
         date: 'May 2019 - July 2022',
-        logo: konasl
+        logo: konasl,
+        images: [
+            {
+                type: "image/webp",
+                srcSet: konaslWebp,
+                fallback: false
+            },
+            {
+                type: "image/png",
+                srcSet: konasl,
+                fallback: true
+            }
+        ]
     }
 ]
 

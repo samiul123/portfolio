@@ -49,11 +49,11 @@ export const Education = (props) => {
                             icon={
                                 <picture>
                                     {education.images.map((image, i) => (
-                                        <>
-                                            <source key={`${i}_${index}`} type={image.type} srcSet={image.srcSet}/>
+                                        <div key={`${i}_${index}`}>
+                                            <source type={image.type} srcSet={image.srcSet}/>
                                             {image.fallback && <img src={image.srcSet} alt={education.institution}
                                                                     className="w-full h-full object-contain"/>}
-                                        </>
+                                        </div>
                                     ))}
                                 </picture>
                             }

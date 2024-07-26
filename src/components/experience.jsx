@@ -1,4 +1,4 @@
-import {download, experienceBg, experienceWebp, resume} from "../assets";
+import {download, experienceBg, experienceWebp, resume, resumeWebp} from "../assets";
 import {VerticalTimeline, VerticalTimelineElement} from "react-vertical-timeline-component";
 import {experiences} from "../constants";
 import React from "react";
@@ -51,11 +51,15 @@ export const Experience = (props) => {
                                 justifyContent: 'center'
                             }}
                             icon={
-                                <img
-                                    src={experience.logo}
-                                    alt={experience.company}
-                                    className="w-20 h-10 object-contain"
-                                />
+                                <picture>
+                                    {experience.images.map((image, i) => (
+                                        <div key={`${i}_${index}`}>
+                                            <source type={image.type} srcSet={image.srcSet}/>
+                                            {image.fallback && <img src={image.srcSet} alt={experience.company}
+                                                                    className="w-20 h-10 object-contain"/>}
+                                        </div>
+                                    ))}
+                                </picture>
                             }
                         >
                             <h3 className="vertical-timeline-element-title text-xl font-bold">{experience.company}</h3>
@@ -84,11 +88,15 @@ export const Experience = (props) => {
                             justifyContent: 'center'
                         }}
                         icon={
-                            <img
-                                src={resume}
-                                alt="resume"
-                                className="w-20 h-10 object-contain"
-                            />
+                            <picture>
+                                <source type="image/webp" srcSet={resumeWebp}/>
+                                <source type="image/png" srcSet={resume}/>
+                                <img
+                                    src={resume}
+                                    alt="resume"
+                                    className="w-20 h-10 object-contain"
+                                />
+                            </picture>
                         }
                     >
                         <button

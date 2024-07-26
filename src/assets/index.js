@@ -54,8 +54,11 @@ import umd from './education/umd-logo.png';
 import umdwebp from './education/umd-logo.webp';
 
 import stiboDX from './experience/stiboDx.png';
+import stiboDXWebp from './experience/stiboDx.webp';
 import konasl from './experience/konasl.png';
+import konaslWebp from './experience/konasl.webp';
 import resume from './experience/resume.png';
+import resumeWebp from './experience/resume.webp';
 import download from './experience/download.svg';
 
 import resumePdf from './resume/resume.pdf';
@@ -162,5 +165,8 @@ export {
     bugAnalysisWebp,
     pythonwebp,
     buetwebp,
-    umdwebp
+    umdwebp,
+    stiboDXWebp,
+    konaslWebp,
+    resumeWebp
 };
