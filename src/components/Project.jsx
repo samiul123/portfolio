@@ -13,7 +13,7 @@ const ProjectCard = ({
                          description,
                          images,
                          githubUrl,
-                         demo,
+                         demoUrl,
                          index,
                          active,
                          handleClick,
@@ -76,21 +76,25 @@ const ProjectCard = ({
                     >
                         {description}
                     </p>
-                    <button
-                        className="flex justify-start gap-3 sm:text-[16px] text-[14px]
+                    {
+                        demoUrl &&
+                        <button
+                            className="relative flex justify-start gap-3 sm:text-[16px] text-[14px]
                         font-bold items-center py-5 pl-3 pr-3
                         whitespace-nowrap sm:w-[138px] sm:h-[50px]
                         w-[125px] h-[46px] rounded-[10px]
                         sm:mt-[22px] mt-[16px] bg-black transition duration-[0.2s] ease-in-out"
-                        onClick={() => window.open(demo, '_blank')}
-                    >
-                        <img
-                            src={show}
-                            alt="Show"
-                            className="sm:w-[34px] sm:h-[34px] w-[30px] h-[30px] object-contain"
-                        />
-                        DEMO
-                    </button>
+                            onClick={() => window.open(demoUrl, '_blank')}
+                        >
+                            <img
+                                src={show}
+                                alt="Show"
+                                className="sm:w-[34px] sm:h-[34px] w-[30px] h-[30px] object-contain"
+                            />
+                            DEMO
+                        </button>
+                    }
+
                 </div>
             )}
         </motion.div>
@@ -100,24 +104,24 @@ const ProjectCard = ({
 
 export const Project = (props) => {
     const [active, setActive] = useState('mindquest');
-    const images=[{
-            type: "image/webp",
-            srcSet: projectWebp,
-            fallback: false
-        }, {
+    const images = [{
+        type: "image/webp",
+        srcSet: projectWebp,
+        fallback: false
+    }, {
         type: "image/jpeg",
-            srcSet: projectBg,
-            fallback: true
+        srcSet: projectBg,
+        fallback: true
     }]
     return (
         <div id={props.id}
              key={props.id}
              className="relative p-10 h-auto bg-cover text-white flex flex-col items-center justify-center space-y-10"
-             >
+        >
             <Background images={images}/>
             <h2 className={styles.pageTitle}>PROJECTS</h2>
-                <motion.div
-                    variants={staggerContainer}
+            <motion.div
+                variants={staggerContainer}
                     initial="hidden"
                     whileInView="show"
                     viewport={{once: false, amount: 0.25}}
