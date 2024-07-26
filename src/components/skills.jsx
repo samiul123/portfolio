@@ -1,7 +1,7 @@
 import {skillsBg, skillsWebp} from "../assets";
 import {skillGroups} from "../constants";
 import {motion, useInView} from "framer-motion";
-import React, {useEffect, useRef, useState} from "react";
+import React, {Fragment, useEffect, useRef, useState} from "react";
 import {styles} from "../styles";
 import {Slide} from "react-slideshow-image";
 import 'react-slideshow-image/dist/styles.css'
@@ -62,11 +62,11 @@ const SkillGroup = (props) => {
                         <picture>
                             {
                                 item.images.map((image, index) => (
-                                    <div key={`${i}_${index}`}>
+                                    <Fragment key={`${i}_${index}`}>
                                         <source type={image.type} srcSet={image.srcSet}/>
                                         {image.fallback && <img src={image.srcSet} alt={item.name}
                                                                 className="w-full h-full object-contain"/>}
-                                    </div>
+                                    </Fragment>
                                 ))
                             }
                         </picture>

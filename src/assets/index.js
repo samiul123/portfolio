@@ -73,9 +73,13 @@ import hide from './icons/hide.svg';
 
 import udemy from './certification/udemy.svg';
 import algoxpert from './certification/algoxpert.png';
+import algoxpertWebp from './certification/algoxpert.webp';
 import systemxpert from './certification/systems-expert.png';
+import systemxpertWebp from './certification/systems-expert.webp';
 import hadoop from './certification/hadoop.png';
+import hadoopWebp from './certification/hadoop.webp';
 import datascienceBootcamp from './certification/datascience-bootcamp.png'
+import datascienceBootcampWebp from './certification/datascience-bootcamp.webp'
 
 import linkedin from './contact/linkedin.svg';
 import medium from './contact/medium.svg';
@@ -168,5 +172,9 @@ export {
     umdwebp,
     stiboDXWebp,
     konaslWebp,
-    resumeWebp
+    resumeWebp,
+    algoxpertWebp,
+    systemxpertWebp,
+    hadoopWebp,
+    datascienceBootcampWebp
 };

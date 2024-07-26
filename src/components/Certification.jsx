@@ -1,5 +1,5 @@
 import {certificationBg, certificationWebp} from "../assets";
-import React, { useEffect, useState } from "react";
+import React, {Fragment, useEffect, useState} from "react";
 import {certifications} from "../constants";
 import { motion } from "framer-motion";
 import { fadeIn } from "../utils/motion";
@@ -64,19 +64,22 @@ export const Certification = (props) => {
                                         <motion.div
                                             key={itemIndex}
                                             className="flex-1 rounded-lg items-center z-10 p-3"
-                                            whileHover={{ scale: 1.1 }}
+                                            whileHover={{scale: 1.1}}
                                             variants={fadeIn('right', 'spring', itemIndex * 0.5, 0.75)}
                                         >
-                                            <a
-                                                className="hover:cursor-pointer"
-                                                onClick={() => window.open(item.credentialUrl)}
-                                            >
-                                                <img
-                                                    src={item.image}
-                                                    alt={item.issuer}
-                                                    className="w-full h-auto rounded-lg"
-                                                />
-                                            </a>
+                                            <picture className="hover:cursor-pointer"
+                                                     onClick={() => window.open(item.credentialUrl)}>
+                                                {
+                                                    item.images.map((image, index) => (
+                                                        <Fragment key={`${groupIndex}_${itemIndex}_${index}`}>
+                                                            <source type={image.type} srcSet={image.srcSet}/>
+                                                            {image.fallback &&
+                                                                <img src={image.srcSet} alt={item.title}
+                                                                     className="w-full h-auto rounded-lg"/>}
+                                                        </Fragment>
+                                                    ))
+                                                }
+                                            </picture>
                                         </motion.div>
                                     ))
                                 }

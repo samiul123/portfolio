@@ -48,7 +48,15 @@ import {
     bugAnalysis,
     mindquestwebp,
     portfoliowebp,
-    bugAnalysisWebp, pythonwebp, umdwebp, buetwebp, stiboDXWebp, konaslWebp
+    bugAnalysisWebp,
+    pythonwebp,
+    umdwebp,
+    buetwebp,
+    stiboDXWebp,
+    konaslWebp,
+    systemxpertWebp,
+    hadoopWebp,
+    datascienceBootcampWebp
 } from "../assets";
 import {Education} from "../components/education";
 import {Experience} from "../components/experience";
@@ -563,6 +571,18 @@ const certifications = [
         issueDate: 'Apr 2021',
         image: systemxpert,
         credentialUrl: 'https://certificate.algoexpert.io/SE-f21fe4bd68',
+        images: [
+            {
+                type: "image/webp",
+                srcSet: systemxpertWebp,
+                fallback: false
+            },
+            {
+                type: "image/png",
+                srcSet: systemxpert,
+                fallback: true
+            }
+        ]
     },
     {
         title: 'The Ultimate Hands-On Hadoop: Tame Your Big Data',
@@ -570,7 +590,19 @@ const certifications = [
         issuerLogo: udemy,
         issueDate: 'Apr 2021',
         image: hadoop,
-        credentialUrl: 'https://www.udemy.com/certificate/UC-31e402de-0bd2-44ee-a4fa-dce048140d68/'
+        credentialUrl: 'https://www.udemy.com/certificate/UC-31e402de-0bd2-44ee-a4fa-dce048140d68/',
+        images: [
+            {
+                type: "image/webp",
+                srcSet: hadoopWebp,
+                fallback: false
+            },
+            {
+                type: "image/png",
+                srcSet: hadoop,
+                fallback: true
+            }
+        ]
     },
     {
         title: 'The Data Science Course: Complete Data Science Bootcamp 2024',
@@ -579,6 +611,18 @@ const certifications = [
         issueDate: 'Mar 2021',
         image: datascienceBootcamp,
         credentialUrl: 'https://www.udemy.com/certificate/UC-fc9d123a-b46f-402d-ba63-2385262a395e/',
+        images: [
+            {
+                type: "image/webp",
+                srcSet: datascienceBootcampWebp,
+                fallback: false
+            },
+            {
+                type: "image/png",
+                srcSet: datascienceBootcamp,
+                fallback: true
+            }
+        ]
     }
 ]
 

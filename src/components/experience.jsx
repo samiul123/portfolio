@@ -1,7 +1,7 @@
 import {download, experienceBg, experienceWebp, resume, resumeWebp} from "../assets";
 import {VerticalTimeline, VerticalTimelineElement} from "react-vertical-timeline-component";
 import {experiences} from "../constants";
-import React from "react";
+import React, {Fragment} from "react";
 import {styles} from "../styles";
 import Background from "./Background";
 
@@ -53,11 +53,11 @@ export const Experience = (props) => {
                             icon={
                                 <picture>
                                     {experience.images.map((image, i) => (
-                                        <div key={`${i}_${index}`}>
+                                        <Fragment key={`${i}_${index}`}>
                                             <source type={image.type} srcSet={image.srcSet}/>
                                             {image.fallback && <img src={image.srcSet} alt={experience.company}
                                                                     className="w-20 h-10 object-contain"/>}
-                                        </div>
+                                        </Fragment>
                                     ))}
                                 </picture>
                             }
