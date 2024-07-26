@@ -49,7 +49,9 @@ import jira from './tech/jira.svg';
 import github from './tech/github.svg';
 
 import buet from './education/buet-logo.png';
+import buetwebp from './education/buet-logo.webp';
 import umd from './education/umd-logo.png';
+import umdwebp from './education/umd-logo.webp';
 
 import stiboDX from './experience/stiboDx.png';
 import konasl from './experience/konasl.png';
@@ -158,5 +160,7 @@ export {
     portfoliowebp,
     bugAnalysis,
     bugAnalysisWebp,
-    pythonwebp
+    pythonwebp,
+    buetwebp,
+    umdwebp
 };

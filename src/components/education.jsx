@@ -45,13 +45,17 @@ export const Education = (props) => {
                                     <h3 className="text-white text-[18px] font-bold">{education.date}</h3>
                                 </div>
                             }
-                            iconStyle={{ boxShadow: 'none', background: '#333b50', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+                            iconStyle={{ boxShadow: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
                             icon={
-                                <img
-                                    src={education.logo}
-                                    alt={education.institution}
-                                    className="w-10 h-10 object-contain"
-                                />
+                                <picture>
+                                    {education.images.map((image, i) => (
+                                        <>
+                                            <source key={`${i}_${index}`} type={image.type} srcSet={image.srcSet}/>
+                                            {image.fallback && <img src={image.srcSet} alt={education.institution}
+                                                                    className="w-full h-full object-contain"/>}
+                                        </>
+                                    ))}
+                                </picture>
                             }
                         >
                             <h3 className="vertical-timeline-element-title text-xl font-bold">{education.institution}</h3>

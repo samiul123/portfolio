@@ -48,7 +48,7 @@ import {
     bugAnalysis,
     mindquestwebp,
     portfoliowebp,
-    bugAnalysisWebp, pythonwebp
+    bugAnalysisWebp, pythonwebp, umdwebp, buetwebp
 } from "../assets";
 import {Education} from "../components/education";
 import {Experience} from "../components/experience";
@@ -464,14 +464,38 @@ const educations = [
         major: 'Computer Science',
         degree: 'Master of Science',
         date: 'Aug 2023 - Present',
-        logo: umd
+        logo: umd,
+        images: [
+            {
+                type: "image/webp",
+                srcSet: umdwebp,
+                fallback: false
+            },
+            {
+                type: "image/png",
+                srcSet: umd,
+                fallback: true
+            }
+        ]
     },
     {
         institution: 'Bangladesh University of Engineering and Technology',
         major: 'Computer Science and Engineering',
         degree: 'Bachelor of Science',
         date: 'Feb 2015 - Apr 2019',
-        logo: buet
+        logo: buet,
+        images: [
+            {
+                type: "image/webp",
+                srcSet: buetwebp,
+                fallback: false
+            },
+            {
+                type: "image/png",
+                srcSet: buet,
+                fallback: true
+            }
+        ]
     }
 ]
 
