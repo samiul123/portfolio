@@ -1,12 +1,19 @@
 import logo from './personal/logo.png';
 
 import samiul from './backgrounds/samiul-v2.png';
+import samiulWebp from './backgrounds/samiul-v2.webp';
 import skillsBg from './backgrounds/skills-bg.jpg';
+import skillsWebp from './backgrounds/skills-bg.webp';
 import educationBg from './backgrounds/education-bg.jpg';
+import educationWebp from './backgrounds/education-bg.webp';
 import experienceBg from './backgrounds/experience-bg.jpg';
+import experienceWebp from './backgrounds/experience-bg.webp';
 import publicationBg from './backgrounds/publication-bg.jpg';
+import publicationWebp from './backgrounds/publication-bg.webp';
 import certificationBg from './backgrounds/certification-bg.jpg';
+import certificationWebp from './backgrounds/certification-bg.webp';
 import projectBg from './backgrounds/project-bg.jpg';
+import projectWebp from './backgrounds/project-bg.webp';
 
 import java from './tech/java-original.svg';
 import python from './tech/python.png';
@@ -69,13 +76,18 @@ import medium from './contact/medium.svg';
 import gmail from './contact/gmail.svg';
 
 import mindquest from './projects/mindquest.png';
+import mindquestwebp from './projects/mindquest.webp';
 import portfolio from './projects/portfolio.jpg';
+import portfoliowebp from './projects/portfolio.webp';
 import bugAnalysis from './projects/bug-fixing-analysis.jpeg';
+import bugAnalysisWebp from './projects/bug-fixing-analysis.webp';
 
 export {
     logo,
     samiul,
+    samiulWebp,
     skillsBg,
+    skillsWebp,
     java,
     python,
     apacheCamel,
@@ -109,16 +121,20 @@ export {
     buet,
     umd,
     educationBg,
+    educationWebp,
     stiboDX,
     konasl,
     experienceBg,
+    experienceWebp,
     resume,
     download,
     resumePdf,
     publicationBg,
+    publicationWebp,
     rightArrow,
     leftArrow,
     certificationBg,
+    certificationWebp,
     udemy,
     algoxpert,
     systemxpert,
@@ -131,10 +147,14 @@ export {
     gmail,
     menu,
     projectBg,
+    projectWebp,
     github,
     show,
     hide,
     mindquest,
+    mindquestwebp,
     portfolio,
-    bugAnalysis
+    portfoliowebp,
+    bugAnalysis,
+    bugAnalysisWebp
 };

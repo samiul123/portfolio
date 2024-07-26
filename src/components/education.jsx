@@ -1,20 +1,30 @@
 import React from 'react';
-import { educationBg } from '../assets';
+import {educationBg, educationWebp} from '../assets';
 import { educations } from '../constants';
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 import './education.css';
 import {styles} from "../styles";
+import Background from "./Background";
 
 export const Education = (props) => {
+    const images=[{
+        type: "image/webp",
+        srcSet: educationWebp,
+        fallback: false
+    }, {
+        type: "image/jpeg",
+        srcSet: educationBg,
+        fallback: true
+    }]
+
     return (
         <div
             id={props.id}
             key={props.id}
             className="uppercase relative p-10 h-auto bg-cover text-white flex flex-col items-center space-y-10"
-            style={{ backgroundImage: `url(${educationBg})` }}
         >
-            <div className="absolute inset-0 bg-custom-gray opacity-80 z-0"></div>
+            <Background images={images}/>
             <h2 className={styles.pageTitle}>Education</h2>
             <div className="z-10 w-full">
                 <VerticalTimeline>

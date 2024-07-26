@@ -44,7 +44,11 @@ import {
     medium,
     gmail,
     mindquest,
-    portfolio, bugAnalysis
+    portfolio,
+    bugAnalysis,
+    mindquestwebp,
+    portfoliowebp,
+    bugAnalysisWebp
 } from "../assets";
 import {Education} from "../components/education";
 import {Experience} from "../components/experience";
@@ -370,7 +374,18 @@ const projects = [
         description: 'A mental health related application that facilitates community engagement, awareness regarding mental health.',
         githubUrl: 'https://github.com/samiul123/mindquest',
         demoUrl: 'https://drive.google.com/file/d/1VQ6SahYI7aexdS3wnH0OnkyAMKZCZ7ga/view?usp=sharing',
-        image: mindquest
+        images: [
+            {
+                type: "image/webp",
+                srcSet: mindquestwebp,
+                fallback: false
+            },
+            {
+                type: "image/png",
+                srcSet: mindquest,
+                fallback: true
+            }
+        ]
     },
     {
         id: 'portfolio',
@@ -378,14 +393,36 @@ const projects = [
         description: 'A website to showcase my achievements and experience gathered so far.',
         githubUrl: 'https://github.com/samiul123/samiul123.github.io',
         demoUrl: 'https://samiul123.github.io',
-        image: portfolio
+        images: [
+            {
+                type: "image/webp",
+                srcSet: portfoliowebp,
+                fallback: false
+            },
+            {
+                type: "image/jpeg",
+                srcSet: portfolio,
+                fallback: true
+            }
+        ]
     },
     {
         id: 'bug-fixing-analysis',
         title: 'Bug Fixing Analysis',
         description: 'Data analysis of open and closed bugs of Pytorch and Tensorflow.',
         githubUrl: 'https://github.com/samiul123/bug-fixing-analysis',
-        image: bugAnalysis
+        images: [
+            {
+                type: "image/webp",
+                srcSet: bugAnalysisWebp,
+                fallback: false
+            },
+            {
+                type: "image/jpeg",
+                srcSet: bugAnalysis,
+                fallback: true
+            }
+        ]
     }
 ]
 

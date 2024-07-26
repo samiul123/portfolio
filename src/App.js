@@ -2,18 +2,29 @@ import './App.css';
 import Header from "./components/header";
 import {Footer} from "./components/footer";
 import Home from "./components/home";
-import {samiul} from "./assets";
+import {samiul, samiulWebp} from "./assets";
 import {navLinks} from "./constants";
 import React from "react";
+import Background from "./components/Background";
 
 function App() {
+    const images=[{
+        type: "image/webp",
+        srcSet: samiulWebp,
+        fallback: false
+    }, {
+        type: "image/png",
+        srcSet: samiul,
+        fallback: true
+    }]
     return (
         <div className="h-screen w-full">
-            <div className="xl:h-screen h-auto bg-cover bg-center p-5"
-                 style={{backgroundImage: `url(${samiul})`}}>
+            <Background images={images} showGrayBackground={false}/>
+            <div className="relative xl:h-screen h-auto bg-cover bg-center p-5">
                 <Header/>
                 <Home/>
             </div>
+
             {
                 navLinks.map(nav => {
                     if (nav.id !== 'home' && nav.route) {

@@ -1,8 +1,9 @@
-import { publicationBg, rightArrow, leftArrow } from "../assets";
+import {publicationBg, rightArrow, leftArrow, publicationWebp} from "../assets";
 import React, { useState } from "react";
 import { publications } from "../constants";
-import {AnimatePresence, motion} from "framer-motion";
+import {motion} from "framer-motion";
 import {styles} from "../styles";
+import Background from "./Background";
 
 export const Publication = (props) => {
     const [showAbstract, setShowAbstract] = useState(false);
@@ -32,6 +33,15 @@ export const Publication = (props) => {
         }),
     };
 
+    const images=[{
+        type: "image/webp",
+        srcSet: publicationWebp,
+        fallback: false
+    }, {
+        type: "image/jpeg",
+        srcSet: publicationBg,
+        fallback: true
+    }]
 
     return (
         <div
@@ -40,7 +50,7 @@ export const Publication = (props) => {
             className="relative p-10 h-auto bg-cover text-white flex flex-col items-center space-y-10 uppercase"
             style={{ backgroundImage: `url(${publicationBg})` }}
         >
-            <div className="absolute inset-0 bg-custom-gray opacity-80 z-0"></div>
+            <Background images={images}/>
             <h2 className={styles.pageTitle}>Publication</h2>
             {publications.map((publication, index) => (
                 <motion.div

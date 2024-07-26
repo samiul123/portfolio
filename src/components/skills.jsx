@@ -1,11 +1,12 @@
-import {skillsBg} from "../assets";
+import {skillsBg, skillsWebp} from "../assets";
 import {skillGroups} from "../constants";
-import {motion, AnimatePresence, useInView} from "framer-motion";
-import {useEffect, useRef, useState} from "react";
+import {motion, useInView} from "framer-motion";
+import React, {useEffect, useRef, useState} from "react";
 import {styles} from "../styles";
 import {Slide} from "react-slideshow-image";
 import 'react-slideshow-image/dist/styles.css'
 import {chunkArray} from "../utils/helpers";
+import Background from "./Background";
 
 const SkillGroup = (props) => {
     const [hoveredItem, setHoveredItem] = useState(null);
@@ -71,6 +72,15 @@ const Skills = (props) => {
     const [hoveredGroup, setHoveredGroup] = useState(null);
     const [chunkedSkillGroups, setChunkedSkillGroups] = useState([]);
     const [chunkSize, setChunkSize] = useState(0);
+    const images=[{
+            type: "image/webp",
+            srcSet: skillsWebp,
+            fallback: false
+        }, {
+        type: "image/jpeg",
+            srcSet: skillsBg,
+            fallback: true
+    }]
 
     const handleGroupMouseEnter = (group) => {
         setHoveredGroup(group);
@@ -98,12 +108,12 @@ const Skills = (props) => {
     const isInView = useInView(skillRef, {amount: .25});
 
     return (
-        <div id={props.id}
-             key={props.id}
-             ref={skillRef}
-             className="relative p-10 h-auto bg-cover text-white flex flex-col items-center justify-center space-y-10"
-             style={{backgroundImage: `url(${skillsBg})`}}>
-            <div className="absolute inset-0 bg-custom-gray opacity-80 z-0"></div>
+        <div
+            id={props.id}
+            ref={skillRef}
+            className="relative p-10 h-auto bg-cover text-white flex flex-col items-center justify-center space-y-10"
+            >
+            <Background images={images}/>
             <h2 className={styles.pageTitle}>SKILLS</h2>
             <div className="relative z-10 w-screen">
                 <Slide arrows={false}

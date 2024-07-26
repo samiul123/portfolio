@@ -1,16 +1,17 @@
-import {projectBg, github, show, hide} from "../assets"; // Ensure you import other assets as needed
+import {projectBg, github, show, hide, projectWebp} from "../assets"; // Ensure you import other assets as needed
 import { styles } from "../styles";
 import {projects} from "../constants";
-import {useEffect, useState} from "react";
+import {Fragment, useEffect, useState} from "react";
 import {chunkArray} from "../utils/helpers";
 import {motion} from "framer-motion";
 import {fadeIn, staggerContainer} from "../utils/motion";
+import Background from "./Background";
 
 const ProjectCard = ({
                          id,
                          title,
                          description,
-                         image,
+                         images,
                          githubUrl,
                          demo,
                          index,
@@ -25,13 +26,18 @@ const ProjectCard = ({
             } flex items-center justify-center h-[420px] cursor-pointer rounded-b-[24px] overflow-hidden`}
             onClick={() => handleClick(id)}
         >
-            <div className="absolute top-0 left-0 w-full h-full bg-custom-gray opacity-80"></div>
+            {/*<div className="absolute top-0 left-0 w-full h-full bg-custom-gray opacity-80"></div>*/}
 
-            <img
-                src={image}
-                alt={title}
-                className="absolute w-full h-full object-cover rounded-b-[24px]"
-            />
+            {/*TODO: use background component*/}
+            <picture className="absolute w-full h-full object-cover rounded-b-[24px]">
+                {images.map((image, index) => (
+                    <Fragment key={index}>
+                        <source type={image.type} srcSet={image.srcSet}/>
+                        {image.fallback && <img src={image.srcSet} alt={title} className="w-full h-full object-cover"/>}
+                    </Fragment>
+                ))}
+            </picture>
+
 
             {active !== id ? (
                 <div className="relative flex items-center justify-start pr-[4.5rem]">
@@ -94,13 +100,21 @@ const ProjectCard = ({
 
 export const Project = (props) => {
     const [active, setActive] = useState('mindquest');
-
+    const images=[{
+            type: "image/webp",
+            srcSet: projectWebp,
+            fallback: false
+        }, {
+        type: "image/jpeg",
+            srcSet: projectBg,
+            fallback: true
+    }]
     return (
         <div id={props.id}
              key={props.id}
              className="relative p-10 h-auto bg-cover text-white flex flex-col items-center justify-center space-y-10"
-             style={{backgroundImage: `url(${projectBg})`}}>
-            <div className="absolute inset-0 bg-custom-gray opacity-80 z-0"></div>
+             >
+            <Background images={images}/>
             <h2 className={styles.pageTitle}>PROJECTS</h2>
                 <motion.div
                     variants={staggerContainer}

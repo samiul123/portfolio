@@ -1,12 +1,13 @@
-import { certificationBg } from "../assets";
+import {certificationBg, certificationWebp} from "../assets";
 import React, { useEffect, useState } from "react";
-import {certifications, skillGroups} from "../constants";
+import {certifications} from "../constants";
 import { motion } from "framer-motion";
 import { fadeIn } from "../utils/motion";
 import { styles } from "../styles";
 import { Slide } from "react-slideshow-image";
 import 'react-slideshow-image/dist/styles.css';
 import { chunkArray } from "../utils/helpers";
+import Background from "./Background";
 
 export const Certification = (props) => {
     const [chunkedGroups, setChunkedGroups] = useState([]);
@@ -26,14 +27,24 @@ export const Certification = (props) => {
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
+    // TODO: Use images from constant navlinks
+    const images=[{
+        type: "image/webp",
+        srcSet: certificationWebp,
+        fallback: false
+    }, {
+        type: "image/jpeg",
+        srcSet: certificationBg,
+        fallback: true
+    }]
+
     return (
         <div
             id={props.id}
             key={props.id}
             className="uppercase relative p-10 h-auto bg-cover text-white flex flex-col items-center space-y-10"
-            style={{ backgroundImage: `url(${certificationBg})` }}
         >
-            <div className="absolute inset-0 bg-custom-gray opacity-80 z-0"></div>
+            <Background images={images}/>
             <h2 className={styles.pageTitle}>Certifications</h2>
             <motion.div
                     initial="hidden"

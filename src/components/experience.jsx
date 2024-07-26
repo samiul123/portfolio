@@ -1,18 +1,28 @@
-import {download, experienceBg, resume} from "../assets";
+import {download, experienceBg, experienceWebp, resume} from "../assets";
 import {VerticalTimeline, VerticalTimelineElement} from "react-vertical-timeline-component";
 import {experiences} from "../constants";
 import React from "react";
 import {styles} from "../styles";
+import Background from "./Background";
 
 export const Experience = (props) => {
+    const images=[{
+        type: "image/webp",
+        srcSet: experienceWebp,
+        fallback: false
+    }, {
+        type: "image/jpeg",
+        srcSet: experienceBg,
+        fallback: true
+    }]
+
     return (
         <div
             id={props.id}
             key={props.id}
             className="relative p-10 h-auto bg-cover text-white flex flex-col items-center space-y-10 uppercase"
-            style={{backgroundImage: `url(${experienceBg})`}}
         >
-            <div className="absolute inset-0 bg-custom-gray opacity-80 z-0"></div>
+            <Background images={images} />
             <h2 className={styles.pageTitle}>Experience</h2>
             <div className="z-10 w-full">
                 <VerticalTimeline>
